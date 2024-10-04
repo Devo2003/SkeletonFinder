@@ -28,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Player collided with an orb!");
             Destroy(other.gameObject);
             //OrbCount++;
-            om.CollectOrb();
+            //om.CollectOrb();
         }
 
         if (other.CompareTag("Finish"))

@@ -19,7 +19,7 @@ public class OrbManager : MonoBehaviour
         
     }
 
-    
+
     public void CollectOrb()
     {
         OrbCount++;
@@ -28,7 +28,7 @@ public class OrbManager : MonoBehaviour
             SpawnEndPoint();
         }
     }
-    
+
 
     private void SpawnEndPoint()
     {
