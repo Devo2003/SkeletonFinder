@@ -1572,6 +1572,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1396312753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352614792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352614793}
+  m_Layer: 0
+  m_Name: StonePushPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &352614793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352614792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.44, y: 0, z: 10.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1396312753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408940914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,6 +5507,7 @@ Transform:
   - {fileID: 408940919}
   - {fileID: 1385204184}
   - {fileID: 1945506304}
+  - {fileID: 352614793}
   m_Father: {fileID: 821323745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458561923
@@ -5491,6 +5523,7 @@ GameObject:
   - component: {fileID: 1458561926}
   - component: {fileID: 1458561925}
   - component: {fileID: 1458561924}
+  - component: {fileID: 1458561929}
   m_Layer: 0
   m_Name: GraveStone (16)
   m_TagString: Untagged
@@ -5538,7 +5571,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 857174506}
 --- !u!33 &1458561926
@@ -5600,12 +5633,29 @@ Transform:
   m_GameObject: {fileID: 1458561923}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.74, y: 0, z: 9.41}
+  m_LocalPosition: {x: -6.74, y: 0, z: 9.34}
   m_LocalScale: {x: 0.45, y: 0.22421874, z: 0.275}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1396312753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458561929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458561923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 1458561928}
+  moveDirection: {x: -6.74, y: 0, z: 10}
+  moveDistance: 0.5
+  moveSpeed: 1
+  keyObject: {fileID: 1795537186}
 --- !u!1 &1473902607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6242,7 +6292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1795537187
 SphereCollider:
   m_ObjectHideFlags: 0
