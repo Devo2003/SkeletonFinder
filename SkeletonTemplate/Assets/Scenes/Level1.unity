@@ -1690,7 +1690,7 @@ Transform:
   m_GameObject: {fileID: 352614792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.44, y: 0, z: 10.43}
+  m_LocalPosition: {x: -6.44, y: 0, z: 10.171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4983,7 +4983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1308378243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5937,14 +5937,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1458561923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravestone: {fileID: 1458561928}
-  moveDirection: {x: -6.74, y: 0, z: 0.5}
+  moveDirection: {x: 0, y: 0, z: 1}
   moveDistance: 1
   moveSpeed: 1
-  keyObject: {fileID: 0}
 --- !u!1 &1473902607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,7 +6300,7 @@ Transform:
   m_GameObject: {fileID: 1523025220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.01, y: 1.15, z: 14.18}
+  m_LocalPosition: {x: -22.63, y: 0.604, z: 3.25}
   m_LocalScale: {x: 0.43702, y: 0.43088707, z: 0.40700683}
   m_ConstrainProportionsScale: 0
   m_Children:
