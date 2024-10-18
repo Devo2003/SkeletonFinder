@@ -2134,19 +2134,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.09223471
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9957373
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2154,7 +2154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 169.416
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2287,6 +2287,10 @@ PrefabInstance:
     - target: {fileID: 7159839827445360614, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739154898032034050, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.535
       objectReference: {fileID: 0}
     - target: {fileID: 7985698654002246808, guid: 7732b06fd8a447f4898b4fc46247b9ec, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4983,7 +4987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1308378243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,7 +6304,7 @@ Transform:
   m_GameObject: {fileID: 1523025220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.63, y: 0.604, z: 3.25}
+  m_LocalPosition: {x: -22.63, y: 0.506, z: -8.99}
   m_LocalScale: {x: 0.43702, y: 0.43088707, z: 0.40700683}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12528,7 +12532,7 @@ GameObject:
   - component: {fileID: 4265729239485887163}
   - component: {fileID: 6108169621405069099}
   - component: {fileID: 6900491564344329654}
-  - component: {fileID: 6900491564344329653}
+  - component: {fileID: 6900491564344329655}
   m_Layer: 0
   m_Name: Tombstone68
   m_TagString: Untagged
@@ -21172,7 +21176,7 @@ GameObject:
   - component: {fileID: 1558421698963766951}
   - component: {fileID: 8929850688061635424}
   - component: {fileID: 8929850688061635426}
-  - component: {fileID: 8929850688061635425}
+  - component: {fileID: 8929850688061635427}
   m_Layer: 0
   m_Name: Tombstone100
   m_TagString: Untagged
@@ -21721,7 +21725,7 @@ GameObject:
   - component: {fileID: 8244918333658201924}
   - component: {fileID: 6605125231621026824}
   - component: {fileID: 8244918333658201926}
-  - component: {fileID: 8244918333658201925}
+  - component: {fileID: 8244918333658201927}
   m_Layer: 0
   m_Name: Tombstone41
   m_TagString: Untagged
@@ -24383,7 +24387,7 @@ GameObject:
   - component: {fileID: 697962832419982653}
   - component: {fileID: 974300124531776179}
   - component: {fileID: 5922859818755636234}
-  - component: {fileID: 5922859818755636233}
+  - component: {fileID: 5922859818755636235}
   m_Layer: 0
   m_Name: Tombstone84
   m_TagString: Untagged
@@ -30201,7 +30205,7 @@ GameObject:
   - component: {fileID: 1511783112071413885}
   - component: {fileID: 2998796906568199468}
   - component: {fileID: 5470091676573053123}
-  - component: {fileID: 5470091676573053122}
+  - component: {fileID: 5470091676573053124}
   m_Layer: 0
   m_Name: Tombstone43
   m_TagString: Untagged
@@ -32507,7 +32511,7 @@ GameObject:
   - component: {fileID: 7067188412380266180}
   - component: {fileID: 2365472938530257708}
   - component: {fileID: 7067188412380266182}
-  - component: {fileID: 7067188412380266181}
+  - component: {fileID: 7067188412380266183}
   m_Layer: 0
   m_Name: Tombstone87
   m_TagString: Untagged
@@ -34153,23 +34157,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883132104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5470091676573053122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663600894544068779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 5470091676573053121}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &5470091676573053123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34191,6 +34178,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756505, y: 16.53374, z: 19.27078}
   m_Center: {x: 0.000030517578, y: 0.00000333786, z: 0.000060081482}
+--- !u!114 &5470091676573053124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663600894544068779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 5470091676573053121}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!1 &5471923975631238544
 GameObject:
   m_ObjectHideFlags: 0
@@ -36213,23 +36216,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883132104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5922859818755636233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3559610936190885661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 5922859818755636232}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &5922859818755636234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36251,6 +36237,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756506, y: 16.533737, z: 19.27078}
   m_Center: {x: 0.000076293945, y: 0.000014781952, z: -0.0000009536743}
+--- !u!114 &5922859818755636235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3559610936190885661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 5922859818755636232}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!23 &5929104390511836439
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36768,7 +36770,7 @@ GameObject:
   - component: {fileID: 7169899755021397942}
   - component: {fileID: 8179010007556267906}
   - component: {fileID: 8179010007556267908}
-  - component: {fileID: 8179010007556267907}
+  - component: {fileID: 8179010007556267909}
   m_Layer: 0
   m_Name: Tombstone40
   m_TagString: Untagged
@@ -38714,7 +38716,7 @@ GameObject:
   - component: {fileID: 5133913892718762348}
   - component: {fileID: 7700747439944082754}
   - component: {fileID: 7700747439944082756}
-  - component: {fileID: 7700747439944082755}
+  - component: {fileID: 7700747439944082757}
   m_Layer: 0
   m_Name: Tombstone101
   m_TagString: Untagged
@@ -41229,23 +41231,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883132104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6900491564344329653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043136688991728091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 6900491564344329652}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &6900491564344329654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41267,6 +41252,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.660074, y: 21.418592, z: 19.369574}
   m_Center: {x: 0.000059604215, y: -0.1154165, z: 0.000060078553}
+--- !u!114 &6900491564344329655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043136688991728091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 6900491564344329652}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!1 &6919812476472772659
 GameObject:
   m_ObjectHideFlags: 0
@@ -41993,23 +41994,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5188709920555787430}
   m_Mesh: {fileID: -12242719469382159, guid: 99082a70adde34449bc30539d9f5fe7c, type: 3}
---- !u!114 &7067188412380266181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5188709920555787430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 1476776138508226967}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &7067188412380266182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42031,6 +42015,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756507, y: 16.376484, z: 19.324505}
   m_Center: {x: 0.00009155856, y: -0.19558832, z: 0.15395166}
+--- !u!114 &7067188412380266183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188709920555787430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 1476776138508226967}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!33 &7068852981953712047
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -45554,23 +45554,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7700747439944082755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6435121488780992993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 1289065451890387220}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &7700747439944082756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45592,6 +45575,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756502, y: 16.53374, z: 19.270779}
   m_Center: {x: 0, y: 0.0000071525574, z: -0.00006198883}
+--- !u!114 &7700747439944082757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435121488780992993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 1289065451890387220}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!1 &7703339832979024892
 GameObject:
   m_ObjectHideFlags: 0
@@ -47953,23 +47952,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8179010007556267907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015628115549063336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 4517377454544515921}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &8179010007556267908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47991,6 +47973,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.660075, y: 21.418596, z: 19.369572}
   m_Center: {x: 0.000029085777, y: -0.11540125, z: -0.00012302538}
+--- !u!114 &8179010007556267909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015628115549063336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 4517377454544515921}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!1 &8187859304860905297
 GameObject:
   m_ObjectHideFlags: 0
@@ -48191,23 +48189,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2994750075221840963}
   m_Mesh: {fileID: -2422275353217440087, guid: 99082a70adde34449bc30539d9f5fe7c, type: 3}
---- !u!114 &8244918333658201925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2994750075221840963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 7529558780695616448}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &8244918333658201926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48229,6 +48210,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756505, y: 16.533737, z: 19.27078}
   m_Center: {x: 0.000030517578, y: -0.000008106232, z: -0.00006198883}
+--- !u!114 &8244918333658201927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994750075221840963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 7529558780695616448}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!1 &8250910560907668589
 GameObject:
   m_ObjectHideFlags: 0
@@ -49610,7 +49607,7 @@ GameObject:
   - component: {fileID: 316869636456081397}
   - component: {fileID: 1524801059612750808}
   - component: {fileID: 8522172017190420210}
-  - component: {fileID: 8522172017190420209}
+  - component: {fileID: 8522172017190420211}
   m_Layer: 0
   m_Name: Tombstone99
   m_TagString: Untagged
@@ -49618,23 +49615,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8522172017190420209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522172017190420208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 1596282504408194660}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &8522172017190420210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49656,6 +49636,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.660074, y: 21.418596, z: 19.369574}
   m_Center: {x: -0.0000014309413, y: -0.11540889, z: -0.000000954158}
+--- !u!114 &8522172017190420211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522172017190420208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 1596282504408194660}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!4 &8526676032810896695
 Transform:
   m_ObjectHideFlags: 0
@@ -51973,23 +51969,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8929850688061635425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2871343902039160473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d56e6f95dc5c74399f884566dd9d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravestone: {fileID: 1582229525808364921}
-  moveDirection: {x: 0, y: 0, z: -1}
-  moveDistance: 2
-  moveSpeed: 2
-  keyObject: {fileID: 0}
 --- !u!65 &8929850688061635426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52011,6 +51990,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.756507, y: 16.376484, z: 19.324505}
   m_Center: {x: 0.00006104474, y: -0.19558452, z: 0.15395166}
+--- !u!114 &8929850688061635427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871343902039160473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580cd3dc094e0f84b907be6233cfbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravestone: {fileID: 1582229525808364921}
+  moveDirection: {x: 0, y: 0, z: -1}
+  moveDistance: 2
+  moveSpeed: 2
 --- !u!33 &8933873672892764789
 MeshFilter:
   m_ObjectHideFlags: 0
