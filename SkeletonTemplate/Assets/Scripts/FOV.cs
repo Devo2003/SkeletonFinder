@@ -32,6 +32,13 @@ public class FOV : MonoBehaviour
         RayCast();
     }
 
+    public void Retry()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(currentScene.name);
+    }
+
     public void RayCast()
     {
         int PlayerLayer = 1 << LayerMask.NameToLayer("Player");
@@ -85,10 +92,11 @@ public class FOV : MonoBehaviour
             {
                 playerDetected = true; // Player is detected after 2 seconds
                 Debug.Log("Player detected");
-                
+
 
                 // Add detection logic here, e.g., load a new scene or trigger an alarm
-                SceneManager.LoadScene("Game Over");
+                Retry();
+                //SceneManager.LoadScene("Game Over");
             }
         }
         else
