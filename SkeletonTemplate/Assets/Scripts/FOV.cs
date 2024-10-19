@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class FOV : MonoBehaviour
 {
     public float distance = 10;
@@ -16,9 +17,10 @@ public class FOV : MonoBehaviour
     public GameObject trianglePrefab;
     private GameObject instantiatedTriangle = null; // Store reference to the instantiated triangle
     private bool playerDetected = false; // Flag to check if player is detected
-
     public float detectionTime = 2f; // The time required to detect the player (2 seconds)
     private float currentDetectionTime = 0f; // Timer for detection
+
+    public MainMenu menu;
 
     private Transform player; // Reference to player
 
@@ -95,7 +97,8 @@ public class FOV : MonoBehaviour
 
 
                 // Add detection logic here, e.g., load a new scene or trigger an alarm
-                Retry();
+                this.menu.ShowGameOver();
+                //Retry();
                 //SceneManager.LoadScene("Game Over");
             }
         }

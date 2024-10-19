@@ -2,48 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-   
-    void Update()
+    public GameObject gameOverText;
+    public Button retryButton;
+    public Button quitButton;
+
+    private void Start()
     {
-        CheckMouseClick();
+        HideMenu(); // Hide the menu initially
+        retryButton.onClick.AddListener(RestartGame);
+        quitButton.onClick.AddListener(QuitGame);
     }
 
-    public void ButtonFunctions()
+    public void ShowGameOver()
     {
-        if (gameObject.name == "Start")
-        {
-            SceneManager.LoadScene("Game");
-        }
+        Debug.Log("Game Over Menu Shown"); 
 
-        if (gameObject.name == "Quit")
-        {
-            Application.Quit();
-        }
+        gameOverText.SetActive(true);
+        retryButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
     }
 
-    public void CheckMouseClick()
+    public void HideMenu()
     {
-        if (Input.GetMouseButtonDown(0)) // Check for left mouse button click
-        {
-            // Cast a ray from the camera through the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        gameOverText.SetActive(false);
+        retryButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
+    }
 
-            RaycastHit hitInfo; // Variable to store information about the hit
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload the current scene
+    }
 
-            // Perform the raycast
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                // Check if the ray hits a button object
-                if (hitInfo.collider.CompareTag("Button"))
-                {
-                    // Perform button action (e.g., load scene, execute function)
-                    hitInfo.collider.GetComponent<MainMenu>().ButtonFunctions();
-                }
-            }
-        }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }
