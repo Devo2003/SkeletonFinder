@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Exit : MonoBehaviour
 {
     public string requiredItemName = "Key";  // The name of the required item
-    public string nextLevelName = "Level 2";  // The name of the next scene/level to load
+    public string nextLevelName = "Level2";  // The name of the next scene/level to load
 
     void OnTriggerEnter(Collider other)
     {
