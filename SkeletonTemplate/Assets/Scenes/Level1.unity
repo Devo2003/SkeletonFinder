@@ -6083,6 +6083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 543450652957598153}
     m_Modifications:
+    - target: {fileID: 815347827148390194, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1802175742}
     - target: {fileID: 2314146109443342821, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.106228
@@ -6121,6 +6125,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314146109443342821, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709004755427272839, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4709004755427272839, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
@@ -20287,7 +20295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredItemName: Key
-  nextLevelName: Level 2
+  nextLevelName: Level2
 --- !u!65 &4398957230150466530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36735,7 +36743,7 @@ GameObject:
   - component: {fileID: 8548923001038179038}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
