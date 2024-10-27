@@ -372,6 +372,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9f044025e7ed042ab9937af1d05767, type: 3}
+--- !u!1 &198300155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7399708541646406832, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+  m_PrefabInstance: {fileID: 5882391128026036022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &266878613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1995,6 +2000,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
   m_PrefabInstance: {fileID: 5882391128026036022}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523025233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198300155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81066bb4fc467b4fad68f90400e2706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  uphillSlowdownFactor: 20
+  downhillStickFactor: 0.1
+  groundCheckDistance: 0.1
 --- !u!1001 &1537612565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2152,7 +2173,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81454713668240876, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 815347827148390194, guid: 24e624d0a0a310342bef91ad04b0e26c, type: 3}
       propertyPath: menu
@@ -19807,6 +19828,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 6076759919770845373, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 53.6
@@ -19866,7 +19891,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7399708541646406832, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1523025233}
   m_SourcePrefab: {fileID: 100100000, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
 --- !u!1 &5896247391833662190
 GameObject:

@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Key
   - Torso
+  - Arm
+  - Rock
   layers:
   - Default
   - TransparentFX
