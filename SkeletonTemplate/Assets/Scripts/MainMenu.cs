@@ -19,11 +19,15 @@ public class MainMenu : MonoBehaviour
 
     public void ShowGameOver()
     {
-        Debug.Log("Game Over Menu Shown"); 
+        Debug.Log("Game Over Menu Shown");
 
+        // Show the game over UI
         gameOverText.SetActive(true);
         retryButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
+
+        // Freeze the game
+        Time.timeScale = 0;
     }
 
     public void HideMenu()
@@ -35,6 +39,8 @@ public class MainMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        // Reset the game speed before restarting
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload the current scene
     }
 
@@ -42,5 +48,6 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
 }
+
+
