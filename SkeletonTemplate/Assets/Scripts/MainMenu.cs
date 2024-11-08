@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        // Reset the game speed before restarting
+        Time.timeScale = 1;
         HideMenu(); // Hide the menu initially
         retryButton.onClick.AddListener(RestartGame);
         quitButton.onClick.AddListener(QuitGame);
@@ -39,8 +41,8 @@ public class MainMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        // Reset the game speed before restarting
-        Time.timeScale = 1;
+        
+      
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload the current scene
     }
 
