@@ -7,39 +7,64 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
 
-    public Transform player;                 // Reference to the player object
-    public Vector3 offset = new Vector3(0, 2, -4); // Default offset from the player
-    public float smoothSpeed = 0.125f;        // Smoothness factor for camera movement
-    public float rotationSpeed = 100f;        // Speed for camera rotation with the right stick
 
-    private float currentYaw = 0f;            // Current horizontal rotation (yaw) of the camera
-    private float currentPitch = 0f;          // Current vertical rotation (pitch) of the camera
+    public float moveSpeed = 5f; // Speed for moving between tiles
+    public Vector2 gridSize = new Vector2(1f, 1f); // Size of each grid cell
 
-    void LateUpdate()
+    private Vector3 targetPosition; // The target position for the player
+    private bool isMoving = false; // Tracks if the player is moving
+
+    void Start()
     {
-        // Get input for camera rotation from the right joystick
-        float horizontalInput = Input.GetAxis("RightStickHorizontal");  // Right stick horizontal axis
-        float verticalInput = Input.GetAxis("RightStickVertical");      // Right stick vertical axis
-
-        // Update yaw and pitch based on right stick input
-        currentYaw += horizontalInput * rotationSpeed * Time.deltaTime;
-        currentPitch -= verticalInput * rotationSpeed * Time.deltaTime;
-        currentPitch = Mathf.Clamp(currentPitch, -30f, 60f); // Limit the pitch angle
-
-        // Calculate offset position with current yaw and pitch
-        Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0f);
-        Vector3 desiredPosition = player.position + rotation * offset;
-
-        // Smoothly interpolate to the desired position
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-        // Update camera position
-        transform.position = smoothedPosition;
-
-        // Keep the camera looking at the player
-        transform.LookAt(player.position + Vector3.up * 1.5f); // Slightly above player
+        // Initialize target position to the player's starting position
+        targetPosition = transform.position;
     }
 
+    void Update()
+    {
+        // If the player is already moving, continue towards the target
+        if (isMoving)
+        {
+            MoveTowardsTarget();
+            return;
+        }
+
+        // Detect keyboard input (WASD or Arrow Keys)
+        Vector2 input = Vector2.zero;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            input.y = 1;
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            input.y = -1;
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            input.x = -1;
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            input.x = 1;
+
+        // If valid input, set target position and mark as moving
+        if (input != Vector2.zero)
+        {
+            // Calculate new target position
+            targetPosition = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
+
+            // Prevent multiple updates to targetPosition while moving
+            isMoving = true;
+        }
+    }
+
+    private void MoveTowardsTarget()
+    {
+        // Smoothly move the player towards the target position
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        // Snap to the target position once close enough
+        if (Vector3.Distance(transform.position, targetPosition) <= 0.001f)
+        {
+            transform.position = targetPosition; // Snap precisely
+            isMoving = false; // Allow new input
+        }
+    }
 
 
     //public float moveSpeed = 5f;           // Movement speed of the player
