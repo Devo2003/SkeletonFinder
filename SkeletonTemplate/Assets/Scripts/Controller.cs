@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(CharacterController))]
-public class Controller : MonoBehaviour
+public class GridMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;          // Speed at which the player moves between tiles
+    public float snapThreshold = 0.01f;  // Distance threshold for snapping to the target
 
-
-    public float moveSpeed = 5f; // Speed for moving between tiles
+    [Header("Grid Settings")]
     public Vector2 gridSize = new Vector2(1f, 1f); // Size of each grid cell
 
-    private Vector3 targetPosition; // The target position for the player
-    private bool isMoving = false; // Tracks if the player is moving
+    private Vector3 targetPosition;      // The target position for the player
+    private bool isMoving = false;       // Tracks if the player is moving
 
     void Start()
     {
@@ -22,7 +20,6 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        // If the player is already moving, continue towards the target
         if (isMoving)
         {
             MoveTowardsTarget();
@@ -42,29 +39,34 @@ public class Controller : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             input.x = 1;
 
-        // If valid input, set target position and mark as moving
+        // If valid input, calculate the new target position
         if (input != Vector2.zero)
         {
-            // Calculate new target position
-            targetPosition = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
+            Vector3 newTarget = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
 
-            // Prevent multiple updates to targetPosition while moving
-            isMoving = true;
+            // Only update target position if it's different from the current one
+            if (newTarget != targetPosition)
+            {
+                targetPosition = newTarget;
+                isMoving = true;
+            }
         }
     }
 
     private void MoveTowardsTarget()
     {
-        // Smoothly move the player towards the target position
+        // Smoothly move the character towards the target position
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Snap to the target position once close enough
-        if (Vector3.Distance(transform.position, targetPosition) <= 0.001f)
+        // Check if the player has reached the target position
+        if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
         {
-            transform.position = targetPosition; // Snap precisely
-            isMoving = false; // Allow new input
+            transform.position = targetPosition; // Snap to the exact position
+            isMoving = false;                   // Stop movement
         }
     }
+}
+
 
 
     //public float moveSpeed = 5f;           // Movement speed of the player
@@ -117,7 +119,7 @@ public class Controller : MonoBehaviour
     //    // Apply vertical velocity
     //    controller.Move(velocity * Time.deltaTime);
     //}
-}
+
 
 
     //public float moveSpeed = 5f;    // Base movement speed
