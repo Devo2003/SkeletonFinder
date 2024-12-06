@@ -147,6 +147,24 @@ MonoBehaviour:
   hasArm: 0
   rockPrefab: {fileID: 893794541}
   throwForce: 1
+--- !u!114 &108018480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108018463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9aac96d36d3639478a57b82b876eb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushRadius: 5
+  pushForce: 1
+  affectedLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  pushEffect: {fileID: 0}
 --- !u!1 &166663192
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,9 +535,9 @@ GameObject:
   - component: {fileID: 893794543}
   - component: {fileID: 893794542}
   - component: {fileID: 893794546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -604,7 +622,7 @@ Transform:
   m_GameObject: {fileID: 893794541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: 0, z: 0}
+  m_LocalPosition: {x: -1.01, y: 0, z: 2.66}
   m_LocalScale: {x: 0.1624264, y: 0.1624264, z: 0.1624264}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -651,7 +669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.25
+      value: -0.99
       objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -659,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -743,6 +761,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7399708541646406832, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 108018472}
+    - targetCorrespondingSourceObject: {fileID: 7399708541646406832, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 108018480}
   m_SourcePrefab: {fileID: 100100000, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
 --- !u!1 &1309099199
 GameObject:

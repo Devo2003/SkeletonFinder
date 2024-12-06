@@ -22,10 +22,10 @@ public class GridMovement : MonoBehaviour
         targetPosition = transform.position;
 
         // Optionally set the grid origin to the player's starting position
-        if (gridOrigin == Vector3.zero)
-        {
-            gridOrigin = transform.position;
-        }
+        //if (gridOrigin == Vector3.zero)
+        //{
+        //    gridOrigin = transform.position;
+        //}
     }
 
     void Update()
