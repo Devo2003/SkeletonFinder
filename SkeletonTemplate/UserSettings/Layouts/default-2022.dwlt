@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 96
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 38
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 39
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -332,16 +332,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\407044\Desktop\SkeletonFinder\SkeletonTemplate
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 04410000
-    m_LastClickedID: 16644
-    m_ExpandedIDs: 000000000441000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: b0410000
+    m_LastClickedID: 16816
+    m_ExpandedIDs: 0000000004410000d041000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,7 +421,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 23}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3aee0000
-      m_LastClickedID: 60986
-      m_ExpandedIDs: 668efeff1098feff48a0feffd4a3feff40acfeffe0cefeffdacffeffe0be00003aee00004eee0000
+      m_SelectedIDs: a6cb0000
+      m_LastClickedID: 52134
+      m_ExpandedIDs: 44cafeffa6cefeffcecffeff66cb0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -865,9 +865,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.7758603, y: 4.1911, z: -1.1729324}
+    m_Target: {x: -0.7758603, y: 3.2568667, z: -1.1240911}
     speed: 2
-    m_Value: {x: -0.7758603, y: 4.1911, z: -1.1729324}
+    m_Value: {x: -0.7758603, y: 3.2568667, z: -1.1240911}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -917,9 +917,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.04798663, y: 0.9454977, z: -0.16666129, w: 0.2756001}
   m_Size:
-    m_Target: 6.0526915
+    m_Target: 5.9674153
     speed: 2
-    m_Value: 5.7920494
+    m_Value: 5.7104454
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1022,18 +1022,18 @@ MonoBehaviour:
       y: 21
       width: 871
       height: 473
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 435.5, y: 236.5}
+    m_Scale: {x: 1.0609, y: 1.0609}
+    m_Translation: {x: 437.49036, y: 242.91594}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -435.5
-      y: -236.5
-      width: 871
-      height: 473
+      x: -412.37662
+      y: -228.97157
+      width: 821.00104
+      height: 445.84787
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 871, y: 494}

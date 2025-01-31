@@ -295,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 289749986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.43, y: 0, z: 0}
+  m_LocalPosition: {x: 2.43, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 499434821}
   - component: {fileID: 499434820}
   - component: {fileID: 499434823}
+  - component: {fileID: 499434824}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -330,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 499434818}
   serializedVersion: 2
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0.49, y: 6.18, z: -4.7}
+  m_LocalPosition: {x: 0.49, y: 6.54, z: -3.96}
   m_LocalScale: {x: 2.2882247, y: 2.3207939, z: 2.4569612}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +429,21 @@ MonoBehaviour:
   roomSize: {x: 14, y: 9}
   mapBoundsMin: {x: 0, y: 0}
   mapBoundsMax: {x: 0, y: 0}
+--- !u!114 &499434824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499434818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d907100402a9284b9de533a99d58e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 2
+  minZoom: 1
+  maxZoom: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 893794541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 0, z: 2.66}
+  m_LocalPosition: {x: -1.01, y: 0.062, z: 2.66}
   m_LocalScale: {x: 0.1624264, y: 0.1624264, z: 0.1624264}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -665,7 +681,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 492189781973941906, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6394788883965118909, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,6 +730,14 @@ PrefabInstance:
     - target: {fileID: 7399708541646406832, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637964719020099648, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637964719020099648, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9063035861659760692, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: player
