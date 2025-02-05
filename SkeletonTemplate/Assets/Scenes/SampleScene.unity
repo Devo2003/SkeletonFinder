@@ -312,8 +312,6 @@ GameObject:
   - component: {fileID: 499434819}
   - component: {fileID: 499434822}
   - component: {fileID: 499434821}
-  - component: {fileID: 499434820}
-  - component: {fileID: 499434823}
   - component: {fileID: 499434824}
   m_Layer: 0
   m_Name: Camera
@@ -331,28 +329,12 @@ Transform:
   m_GameObject: {fileID: 499434818}
   serializedVersion: 2
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0.49, y: 6.54, z: -3.96}
+  m_LocalPosition: {x: 0, y: 6, z: -5.1274557}
   m_LocalScale: {x: 2.2882247, y: 2.3207939, z: 2.4569612}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108018471}
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
---- !u!114 &499434820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499434818}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d771ab57070a624db88c92a1aa1cd05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 108018471}
-  offset: {x: 0, y: 2, z: -4}
-  smoothSpeed: 0.125
-  rotationSpeed: 5
 --- !u!81 &499434821
 AudioListener:
   m_ObjectHideFlags: 0
@@ -394,7 +376,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -412,23 +394,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &499434823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499434818}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8ccff77ad45c44a812aef7db913136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 108018471}
-  smoothSpeed: 0.2
-  roomSize: {x: 14, y: 9}
-  mapBoundsMin: {x: 0, y: 0}
-  mapBoundsMax: {x: 0, y: 0}
 --- !u!114 &499434824
 MonoBehaviour:
   m_ObjectHideFlags: 0
