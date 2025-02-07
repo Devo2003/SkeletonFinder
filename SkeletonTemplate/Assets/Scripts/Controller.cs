@@ -2,9 +2,107 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
+    //[Header("Movement Settings")]
+    //public float moveSpeed = 5f;          // Speed at which the player moves between tiles
+    //public float snapThreshold = 0.01f;  // Distance threshold for snapping to the target
+
+    //[Header("Grid Settings")]
+    //public Vector2 gridSize = new Vector2(1f, 1f); // Size of each grid cell
+    //public int gridWidth = 10;                     // Number of columns in the grid
+    //public int gridHeight = 10;                    // Number of rows in the grid
+    //public Color gridColor = Color.green;          // Color of the grid lines
+    //public Vector3 gridOrigin = Vector3.zero;      // Origin point of the grid
+
+    //private Vector3 targetPosition;               // The target position for the player
+    //private bool isMoving = false;                // Tracks if the player is moving
+
+    //void Start()
+    //{
+    //    // Initialize target position to the player's starting position
+    //    targetPosition = transform.position;
+
+    //    // Optionally set the grid origin to the player's starting position
+    //    //if (gridOrigin == Vector3.zero)
+    //    //{
+    //    //    gridOrigin = transform.position;
+    //    //}
+    //}
+
+    //void Update()
+    //{
+    //    if (isMoving)
+    //    {
+    //        MoveTowardsTarget();
+    //        return;
+    //    }
+
+    //    // Detect keyboard input (WASD or Arrow Keys)
+    //    Vector2 input = Vector2.zero;
+
+    //    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+    //        input.y = 1;
+    //    else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+    //        input.y = -1;
+
+    //    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+    //        input.x = -1;
+    //    else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+    //        input.x = 1;
+
+    //    // If valid input, calculate the new target position
+    //    if (input != Vector2.zero)
+    //    {
+    //        Vector3 newTarget = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
+
+    //        // Only update target position if it's different from the current one
+    //        if (newTarget != targetPosition)
+    //        {
+    //            targetPosition = newTarget;
+    //            isMoving = true;
+    //        }
+    //    }
+    //}
+
+    //private void MoveTowardsTarget()
+    //{
+    //    // Smoothly move the character towards the target position
+    //    transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+    //    // Check if the player has reached the target position
+    //    if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
+    //    {
+    //        transform.position = targetPosition; // Snap to the exact position
+    //        isMoving = false;                   // Stop movement
+    //    }
+    //}
+
+    //// Draw the grid using Gizmos
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = gridColor;
+
+    //    // Loop through each cell in the grid
+    //    for (int x = -gridWidth / 2; x <= gridWidth / 2; x++)
+    //    {
+    //        for (int y = -gridHeight / 2; y <= gridHeight / 2; y++)
+    //        {
+    //            Vector3 cellCenter = gridOrigin + new Vector3(x * gridSize.x, 0, y * gridSize.y);
+
+    //            // Draw the outline of each cell
+    //            Gizmos.DrawLine(cellCenter + new Vector3(-gridSize.x / 2, 0, -gridSize.y / 2),
+    //                            cellCenter + new Vector3(gridSize.x / 2, 0, -gridSize.y / 2));
+    //            Gizmos.DrawLine(cellCenter + new Vector3(gridSize.x / 2, 0, -gridSize.y / 2),
+    //                            cellCenter + new Vector3(gridSize.x / 2, 0, gridSize.y / 2));
+    //            Gizmos.DrawLine(cellCenter + new Vector3(gridSize.x / 2, 0, gridSize.y / 2),
+    //                            cellCenter + new Vector3(-gridSize.x / 2, 0, gridSize.y / 2));
+    //            Gizmos.DrawLine(cellCenter + new Vector3(-gridSize.x / 2, 0, gridSize.y / 2),
+    //                            cellCenter + new Vector3(-gridSize.x / 2, 0, -gridSize.y / 2));
+    //        }
+    //    }
+    //}
     [Header("Movement Settings")]
     public float moveSpeed = 5f;          // Speed at which the player moves between tiles
-    public float snapThreshold = 0.01f;  // Distance threshold for snapping to the target
+    public float snapThreshold = 0.01f;   // Distance threshold for snapping to the target
 
     [Header("Grid Settings")]
     public Vector2 gridSize = new Vector2(1f, 1f); // Size of each grid cell
@@ -13,19 +111,18 @@ public class GridMovement : MonoBehaviour
     public Color gridColor = Color.green;          // Color of the grid lines
     public Vector3 gridOrigin = Vector3.zero;      // Origin point of the grid
 
+    [Header("Vertical Movement Settings")]
+    public float maxStepHeight = 1.5f;             // Max height player can step up
+    public LayerMask groundLayer;                  // LayerMask to detect obstacles
+
     private Vector3 targetPosition;               // The target position for the player
     private bool isMoving = false;                // Tracks if the player is moving
 
+    public float characterHeightOffset = 1f; // Adjust as needed
+
     void Start()
     {
-        // Initialize target position to the player's starting position
         targetPosition = transform.position;
-
-        // Optionally set the grid origin to the player's starting position
-        //if (gridOrigin == Vector3.zero)
-        //{
-        //    gridOrigin = transform.position;
-        //}
     }
 
     void Update()
@@ -36,7 +133,6 @@ public class GridMovement : MonoBehaviour
             return;
         }
 
-        // Detect keyboard input (WASD or Arrow Keys)
         Vector2 input = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -49,12 +145,11 @@ public class GridMovement : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             input.x = 1;
 
-        // If valid input, calculate the new target position
         if (input != Vector2.zero)
         {
             Vector3 newTarget = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
+            newTarget.y = DetectHeightAtPosition(newTarget); // Adjust height based on elevation
 
-            // Only update target position if it's different from the current one
             if (newTarget != targetPosition)
             {
                 targetPosition = newTarget;
@@ -65,30 +160,46 @@ public class GridMovement : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        // Smoothly move the character towards the target position
+        // Ensure the target position has the correct height
+        targetPosition.y = DetectHeightAtPosition(targetPosition);
+
+        // Move smoothly towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Check if the player has reached the target position
+        // Snap to the exact target position when close enough
         if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
         {
-            transform.position = targetPosition; // Snap to the exact position
-            isMoving = false;                   // Stop movement
+            transform.position = targetPosition;
+            isMoving = false;
         }
     }
 
-    // Draw the grid using Gizmos
+    private float DetectHeightAtPosition(Vector3 position)
+    {
+        RaycastHit hit;
+        Vector3 rayStart = position + Vector3.up * (maxStepHeight + 0.5f);
+
+        if (Physics.Raycast(rayStart, Vector3.down, out hit, maxStepHeight * 2, groundLayer))
+        {
+            return hit.point.y + characterHeightOffset;
+        }
+
+        return position.y;
+    }
+
+
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = gridColor;
 
-        // Loop through each cell in the grid
         for (int x = -gridWidth / 2; x <= gridWidth / 2; x++)
         {
             for (int y = -gridHeight / 2; y <= gridHeight / 2; y++)
             {
                 Vector3 cellCenter = gridOrigin + new Vector3(x * gridSize.x, 0, y * gridSize.y);
 
-                // Draw the outline of each cell
                 Gizmos.DrawLine(cellCenter + new Vector3(-gridSize.x / 2, 0, -gridSize.y / 2),
                                 cellCenter + new Vector3(gridSize.x / 2, 0, -gridSize.y / 2));
                 Gizmos.DrawLine(cellCenter + new Vector3(gridSize.x / 2, 0, -gridSize.y / 2),

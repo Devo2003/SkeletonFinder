@@ -737,8 +737,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9063035861659760692, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: maxStepHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063035861659760692, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: startVelocity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063035861659760692, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -766,7 +774,7 @@ GameObject:
   - component: {fileID: 1309099202}
   - component: {fileID: 1309099201}
   - component: {fileID: 1309099200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,8 +861,8 @@ Transform:
   m_GameObject: {fileID: 1309099199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.81}
-  m_LocalScale: {x: 1, y: 4.3601, z: 1}
+  m_LocalPosition: {x: 0.89, y: 0, z: 0.65}
+  m_LocalScale: {x: 1, y: 1.2791225, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -976,7 +984,7 @@ GameObject:
   - component: {fileID: 2083225386}
   - component: {fileID: 2083225385}
   - component: {fileID: 2083225384}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
