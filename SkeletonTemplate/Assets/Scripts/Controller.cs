@@ -101,24 +101,25 @@ public class GridMovement : MonoBehaviour
     //    }
     //}
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;          // Speed at which the player moves between tiles
-    public float snapThreshold = 0.01f;   // Distance threshold for snapping to the target
+    public float moveSpeed = 5f;
+    public float snapThreshold = 0.01f;
 
     [Header("Grid Settings")]
-    public Vector2 gridSize = new Vector2(1f, 1f); // Size of each grid cell
-    public int gridWidth = 10;                     // Number of columns in the grid
-    public int gridHeight = 10;                    // Number of rows in the grid
-    public Color gridColor = Color.green;          // Color of the grid lines
-    public Vector3 gridOrigin = Vector3.zero;      // Origin point of the grid
+    public Vector2 gridSize = new Vector2(1f, 1f);
+    public int gridWidth = 10;
+    public int gridHeight = 10;
+    public Color gridColor = Color.green;
+    public Vector3 gridOrigin = Vector3.zero;
 
     [Header("Vertical Movement Settings")]
-    public float maxStepHeight = 1.5f;             // Max height player can step up
-    public LayerMask groundLayer;                  // LayerMask to detect obstacles
+    public float maxStepHeight = 1.5f;
+    public LayerMask groundLayer;
+    public LayerMask obstacleLayer;  // Added obstacle layer
 
-    private Vector3 targetPosition;               // The target position for the player
-    private bool isMoving = false;                // Tracks if the player is moving
+    private Vector3 targetPosition;
+    private bool isMoving = false;
 
-    public float characterHeightOffset = 1f; // Adjust as needed
+    public float characterHeightOffset = 1f;
 
     void Start()
     {
@@ -148,9 +149,9 @@ public class GridMovement : MonoBehaviour
         if (input != Vector2.zero)
         {
             Vector3 newTarget = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
-            newTarget.y = DetectHeightAtPosition(newTarget); // Adjust height based on elevation
+            newTarget.y = DetectHeightAtPosition(newTarget);
 
-            if (newTarget != targetPosition)
+            if (newTarget != targetPosition && !IsBlocked(newTarget)) // Check for obstacles
             {
                 targetPosition = newTarget;
                 isMoving = true;
@@ -160,13 +161,9 @@ public class GridMovement : MonoBehaviour
 
     private void MoveTowardsTarget()
     {
-        // Ensure the target position has the correct height
         targetPosition.y = DetectHeightAtPosition(targetPosition);
-
-        // Move smoothly towards the target
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-        // Snap to the exact target position when close enough
         if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
         {
             transform.position = targetPosition;
@@ -187,8 +184,13 @@ public class GridMovement : MonoBehaviour
         return position.y;
     }
 
+    private bool IsBlocked(Vector3 position)
+    {
+        Vector3 checkPosition = position + Vector3.up * (characterHeightOffset / 2);
+        Vector3 halfExtents = new Vector3(gridSize.x / 2, characterHeightOffset, gridSize.y / 2);
 
-
+        return Physics.CheckBox(checkPosition, halfExtents, Quaternion.identity, obstacleLayer);
+    }
 
     private void OnDrawGizmos()
     {
