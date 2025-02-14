@@ -17,7 +17,7 @@ public class CamZoom : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
+        //Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
         if (scrollInput != 0)

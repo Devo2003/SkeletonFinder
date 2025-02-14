@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
         om = FindObjectOfType<OrbManager>();
         if (om == null)
         {
-            Debug.LogError("Missing OrbManager");
+           // Debug.LogError("Missing OrbManager");
         }
     }
     OrbManager om;
