@@ -16,17 +16,14 @@ public class DialogueData : ScriptableObject
 public abstract class DialogueTrigger : MonoBehaviour
 {
     public DialogueData dialogueData; // Holds the dialogue data to be triggered
+    private bool hasPlayed = false; //Flag to prevent replaying
 
     protected void TriggerDialogue()
     {
-        if (dialogueData != null)
+        if (dialogueData != null && !hasPlayed)
         {
             DialogueManager.Instance.StartDialogue(dialogueData);
+            hasPlayed = true; //Mark as played
         }
     }
 }
-
-// Trigger that starts dialogue when the player enters a specific area
-
-
-// Trigger that starts dialogue when the player interacts with an NPC

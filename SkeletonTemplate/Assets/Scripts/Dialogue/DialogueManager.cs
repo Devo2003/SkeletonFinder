@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
 
         isDialogueActive = true;
         dialogueUI.SetActive(true);
+        dialogueText.text = ""; //Clears previous text
         dialogueQueue.Clear();
 
         // Enqueue each dialogue line
@@ -80,6 +81,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         isDialogueActive = false;
+        dialogueText.text = ""; //Clears text when dialogue ends
         dialogueUI.SetActive(false);
     }
 }
