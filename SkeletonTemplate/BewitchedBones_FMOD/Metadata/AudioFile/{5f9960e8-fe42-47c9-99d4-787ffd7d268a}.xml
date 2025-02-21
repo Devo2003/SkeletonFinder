@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5f9960e8-fe42-47c9-99d4-787ffd7d268a}">
+		<property name="assetPath">
+			<value>BewitchedBones_TelekinesisSpell_Grab_v2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.71387500000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7cbaaef9-d274-49a4-92bf-bc4bf8c50d9b}</destination>
+		</relationship>
+	</object>
+</objects>

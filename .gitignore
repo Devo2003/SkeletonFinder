@@ -112,3 +112,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 SkeletonTemplate/Assets/Plugins/FMOD/Cache.meta
+SkeletonTemplate/fmod_editor.log

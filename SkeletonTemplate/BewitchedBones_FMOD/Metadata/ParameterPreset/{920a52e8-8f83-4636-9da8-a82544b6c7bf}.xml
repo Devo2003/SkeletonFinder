@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{920a52e8-8f83-4636-9da8-a82544b6c7bf}">
+		<property name="name">
+			<value>Telekinesis</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d90df677-bb01-45a6-aa02-16b88784c811}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{adfa21c8-1114-4536-9294-a2838e97497a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{adfa21c8-1114-4536-9294-a2838e97497a}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
