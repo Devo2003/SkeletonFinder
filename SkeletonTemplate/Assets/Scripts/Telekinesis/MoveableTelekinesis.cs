@@ -1,66 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MoveableTelekinesis : TelekinesisObject
 {
     [Header("Movement Settings")]
-    public Vector3 moveDirection = new Vector3(1, 0, 0); // Default: Move along X-axis
-    public float moveDistance = 3f; // How far it moves
-    public float moveSpeed = 2f; // Speed of movement
+    public float moveSpeed = 5f;      // Speed of movement
+    public float rotationSpeed = 100f; // Speed of rotation
 
-    [Header("Rotation Settings")]
-    public Vector3 rotationAxis = new Vector3(0, 1, 0); // Default: Rotate around Y-axis
-    public float rotationSpeed = 90f; // Degrees per second
-    public float rotationDuration = 2f; // How long the object rotates
+    [Header("Telekinesis Timer")]
+    public float telekinesisDuration = 5f; // Time before deselecting (editable in Inspector)
+    private float timer = 0f;
+    private bool isBeingMoved = false;
 
-    private bool isMoving = false;
-    private Vector3 startPosition;
-    private Vector3 targetPosition;
+    [Header("UI Elements")]
+    public TextMeshProUGUI timerText;  // UI Text for countdown
+    public GameObject telekinesisIndicator; // UI Indicator (e.g., a panel or icon)
 
-    private void Start()
+    private void Update()
     {
-        startPosition = transform.position;
-        targetPosition = startPosition + moveDirection.normalized * moveDistance;
+        if (isBeingMoved)
+        {
+            HandleMovement();
+            HandleRotation();
+            UpdateTimer();
+        }
     }
 
     public override void ActivateTelekinesis()
     {
-        if (!isMoving)
-        {
-            isMoving = true;
-            StartCoroutine(MoveAndRotateObject());
-        }
+        isBeingMoved = true;
+        timer = telekinesisDuration; // Reset timer when activated
+
+        if (telekinesisIndicator) telekinesisIndicator.SetActive(true); // Show UI indicator
     }
 
-    private IEnumerator MoveAndRotateObject()
+    private void HandleMovement()
     {
-        float elapsedTime = 0f;
-        Quaternion startRotation = transform.rotation;
-        Quaternion targetRotation = Quaternion.Euler(rotationAxis * rotationSpeed) * startRotation;
+        float moveX = 0f;
+        float moveZ = 0f;
 
-        while (elapsedTime < moveSpeed)
+        if (Input.GetKey(KeyCode.LeftArrow)) moveZ = -1f; // Move left
+        if (Input.GetKey(KeyCode.RightArrow)) moveZ = 1f; // Move right
+        if (Input.GetKey(KeyCode.UpArrow)) moveX = -1f; // Move up
+        if (Input.GetKey(KeyCode.DownArrow)) moveX = 1f; // Move down
+
+        Vector3 moveDirection = new Vector3(moveX, 0, moveZ).normalized;
+        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+    }
+
+    private void HandleRotation()
+    {
+        float rotateY = 0f;
+
+        if (Input.GetKey(KeyCode.Q)) rotateY = -1f; // Rotate left
+        if (Input.GetKey(KeyCode.E)) rotateY = 1f;  // Rotate right
+
+        transform.Rotate(Vector3.up * rotateY * rotationSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void UpdateTimer()
+    {
+        timer -= Time.deltaTime;
+
+        // Update UI Timer
+        if (timerText)
         {
-            // Move object
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveSpeed);
-
-            // Rotate object
-            if (rotationSpeed > 0)
-            {
-                transform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime / rotationDuration);
-            }
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            timerText.text = $"Time Left: {Mathf.Ceil(timer)}s";
         }
 
-        // Ensure final positions are exact
-        transform.position = targetPosition;
-        if (rotationSpeed > 0)
+        // Deselect object when time runs out
+        if (timer <= 0)
         {
-            transform.rotation = targetRotation;
+            isBeingMoved = false;
+            if (telekinesisIndicator) telekinesisIndicator.SetActive(false); // Hide UI indicator
+            if (timerText) timerText.text = ""; // Clear timer UI
         }
-
-        isMoving = false;
     }
 }
+
+
+
+
