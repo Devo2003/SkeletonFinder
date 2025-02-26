@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b51a7afb-d19c-408b-8618-5d6aaebf2021}">
+		<property name="assetPath">
+			<value>BewitchedBones_BurnSpell_Prime.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7cbaaef9-d274-49a4-92bf-bc4bf8c50d9b}</destination>
+		</relationship>
+	</object>
+</objects>
