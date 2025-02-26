@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 47
+  controlID: 106
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OrbColors
+    - Assets/Scripts/Telekinesis
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -332,16 +332,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/OrbColors
+  - Assets/Scripts/Telekinesis
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHub\SkeletonFinder\SkeletonTemplate
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 98680000
-    m_LastClickedID: 26776
-    m_ExpandedIDs: 000000007e68000094680000
+    scrollPos: {x: 0, y: 21}
+    m_SelectedIDs: 1ce50000
+    m_LastClickedID: 58652
+    m_ExpandedIDs: 00000000a26a0000b86a0000c66a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -369,7 +369,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e680000
+    m_ExpandedIDs: 00000000a26a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,7 +511,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 50a2feffa4a2feff42b0feffa0c2fefff4c2feff7ad0feff9ad7feffeed7feff70e5fefff2ebfeff44ecfeffc6f9feff2200ffff7600ffff800fffff3c1effff8e1effff982dffff2046ffff2446ffff9c46ffff8af6ffff0afbffff2a290100d6300100f0580100367a0100e07e01002e99010082c00100
+      m_ExpandedIDs: 9a60fffff869ffff486afffff877ffff0e7fffff5e7fffff2a8dffffca99ffff1e9affffeaa7ffff1ab2ffff72b2ffff22c0ffffd6c5ffff2ec6ffffded3fffffedbffff52dcffff1eeaffff10fbffff2e240100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -865,9 +865,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 236.53252, y: 99.04044, z: -253.12086}
+    m_Target: {x: -2.6983109, y: 16.277576, z: -43.17305}
     speed: 2
-    m_Value: {x: 236.53252, y: 99.04044, z: -253.12086}
+    m_Value: {x: -2.6983109, y: 16.277576, z: -43.17305}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -913,13 +913,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.31595242, y: 0.19236979, z: -0.064702295, w: 0.92539865}
+    m_Target: {x: 0.39151198, y: 0.38385966, z: -0.18862748, w: 0.81282675}
     speed: 2
-    m_Value: {x: 0.3177568, y: 0.19252527, z: -0.06507459, w: 0.9261371}
+    m_Value: {x: 0.39240363, y: 0.38323495, z: -0.18833236, w: 0.81466633}
   m_Size:
-    m_Target: 10.121896
+    m_Target: 6.52722
     speed: 2
-    m_Value: 10.121896
+    m_Value: 6.52722
   m_Ortho:
     m_Target: 0
     speed: 2

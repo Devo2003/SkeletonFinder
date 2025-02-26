@@ -976,8 +976,6 @@ GameObject:
   - component: {fileID: 6440146221834602830}
   - component: {fileID: 9063035861659760692}
   - component: {fileID: 492189781973941906}
-  - component: {fileID: 8346155856222493790}
-  - component: {fileID: 6810523175873437875}
   - component: {fileID: 380433048524103302}
   m_Layer: 6
   m_Name: Player
@@ -1124,6 +1122,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   characterHeightOffset: 1
 --- !u!114 &492189781973941906
 MonoBehaviour:
@@ -1137,35 +1138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b5860f76d1b496aaf157dc07eb3483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8346155856222493790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7399708541646406832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27e510a2c5537493894130d9eea4ba4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasTorso: 0
-  inventoryItems: []
---- !u!114 &6810523175873437875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7399708541646406832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391842a0594f514449d370c41a54fe5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasArm: 0
-  rockPrefab: {fileID: 0}
-  throwForce: 1
 --- !u!114 &380433048524103302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9aac96d36d3639478a57b82b876eb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushRadius: 5
+  boxSize: {x: 3, y: 2, z: 5}
   pushForce: 1
   affectedLayers:
     serializedVersion: 2
