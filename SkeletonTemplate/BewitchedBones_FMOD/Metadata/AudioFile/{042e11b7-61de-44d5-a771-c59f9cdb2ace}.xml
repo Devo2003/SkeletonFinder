@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{042e11b7-61de-44d5-a771-c59f9cdb2ace}">
+		<property name="assetPath">
+			<value>BewitchedBones_WitchMovement_Loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>40.944437499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7cbaaef9-d274-49a4-92bf-bc4bf8c50d9b}</destination>
+		</relationship>
+	</object>
+</objects>
