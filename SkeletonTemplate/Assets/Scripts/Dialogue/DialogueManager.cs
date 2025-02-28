@@ -72,6 +72,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Ending game...");
             EndGame();
         }
+ 
     }
 
     private void EndGame()
