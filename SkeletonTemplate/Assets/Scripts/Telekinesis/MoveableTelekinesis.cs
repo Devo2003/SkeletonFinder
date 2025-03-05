@@ -7,17 +7,29 @@ using TMPro;
 public class MoveableTelekinesis : TelekinesisObject
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;      // Speed of movement
-    public float rotationSpeed = 100f; // Speed of rotation
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 100f;
 
     [Header("Telekinesis Timer")]
-    public float telekinesisDuration = 5f; // Time before deselecting (editable in Inspector)
+    public float telekinesisDuration = 5f;
     private float timer = 0f;
     private bool isBeingMoved = false;
 
     [Header("UI Elements")]
-    public TextMeshProUGUI timerText;  // UI Text for countdown
-    public GameObject telekinesisIndicator; // UI Indicator (e.g., a panel or icon)
+    public TextMeshProUGUI timerText;
+    public GameObject telekinesisIndicator;
+
+    private Renderer objectRenderer;
+    private Color originalColor;
+
+    private void Start()
+    {
+        objectRenderer = GetComponent<Renderer>();
+        if (objectRenderer)
+        {
+            originalColor = objectRenderer.material.color;
+        }
+    }
 
     private void Update()
     {
@@ -32,9 +44,10 @@ public class MoveableTelekinesis : TelekinesisObject
     public override void ActivateTelekinesis()
     {
         isBeingMoved = true;
-        timer = telekinesisDuration; // Reset timer when activated
+        timer = telekinesisDuration;
 
-        if (telekinesisIndicator) telekinesisIndicator.SetActive(true); // Show UI indicator
+        if (telekinesisIndicator) telekinesisIndicator.SetActive(true);
+        RemoveHighlight();
     }
 
     private void HandleMovement()
@@ -42,10 +55,10 @@ public class MoveableTelekinesis : TelekinesisObject
         float moveX = 0f;
         float moveZ = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) moveZ = -1f; // Move left
-        if (Input.GetKey(KeyCode.RightArrow)) moveZ = 1f; // Move right
-        if (Input.GetKey(KeyCode.UpArrow)) moveX = -1f; // Move up
-        if (Input.GetKey(KeyCode.DownArrow)) moveX = 1f; // Move down
+        if (Input.GetKey(KeyCode.LeftArrow)) moveZ = -1f;
+        if (Input.GetKey(KeyCode.RightArrow)) moveZ = 1f;
+        if (Input.GetKey(KeyCode.UpArrow)) moveX = -1f;
+        if (Input.GetKey(KeyCode.DownArrow)) moveX = 1f;
 
         Vector3 moveDirection = new Vector3(moveX, 0, moveZ).normalized;
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
@@ -55,8 +68,8 @@ public class MoveableTelekinesis : TelekinesisObject
     {
         float rotateY = 0f;
 
-        if (Input.GetKey(KeyCode.Q)) rotateY = -1f; // Rotate left
-        if (Input.GetKey(KeyCode.E)) rotateY = 1f;  // Rotate right
+        if (Input.GetKey(KeyCode.Q)) rotateY = -1f;
+        if (Input.GetKey(KeyCode.E)) rotateY = 1f;
 
         transform.Rotate(Vector3.up * rotateY * rotationSpeed * Time.deltaTime, Space.World);
     }
@@ -65,18 +78,40 @@ public class MoveableTelekinesis : TelekinesisObject
     {
         timer -= Time.deltaTime;
 
-        // Update UI Timer
         if (timerText)
         {
             timerText.text = $"Time Left: {Mathf.Ceil(timer)}s";
         }
 
-        // Deselect object when time runs out
         if (timer <= 0)
         {
             isBeingMoved = false;
-            if (telekinesisIndicator) telekinesisIndicator.SetActive(false); // Hide UI indicator
-            if (timerText) timerText.text = ""; // Clear timer UI
+            if (telekinesisIndicator) telekinesisIndicator.SetActive(false);
+            if (timerText) timerText.text = "";
+        }
+    }
+
+    private void OnMouseEnter()
+    {
+        if (!isBeingMoved && objectRenderer)
+        {
+            objectRenderer.material.color = Color.cyan;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (!isBeingMoved && objectRenderer)
+        {
+            objectRenderer.material.color = originalColor;
+        }
+    }
+
+    private void RemoveHighlight()
+    {
+        if (objectRenderer)
+        {
+            objectRenderer.material.color = originalColor;
         }
     }
 }
