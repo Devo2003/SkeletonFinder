@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: SpellUnlock
   m_EditorClassIdentifier: 
   dialogueLines:
-  - 
+  - Vira! I'm so glad you're alright.
+  - I seem to have lost the rest of my body...
+  - But I found your spellbook!
+  - Please, let us search for the rest of me.
+  - Equipped with your Telekinesis spell, I know we can succeed!
