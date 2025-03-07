@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Crowley_Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - This Is My Land
-  - Yet I Will Share
-  - I need Shiny
+  - Excuse me my good bird, but I think you have a part of me. -T
+  - Nonsense! This is a stick I will use for my nest.
+  - My husband is right mister crow... -V
+  - Crowley
+  - Mister Crowley. You do indeed have a piece of my husband. -V
+  - I care not...unless you can find something better...Something shiny.
