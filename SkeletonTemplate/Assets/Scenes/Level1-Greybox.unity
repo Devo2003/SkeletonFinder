@@ -1592,8 +1592,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 124.92015, y: 247.03195, z: 144.40852}
-  m_Center: {x: -0.00024353276, y: 0, z: 69.54868}
+  m_Size: {x: 124.92015, y: 247.03195, z: 22.90118}
+  m_Center: {x: -0.00024352418, y: 3.844589e-11, z: -5.676452}
 --- !u!114 &651762579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,8 +2330,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 275.09573, y: 382.43665, z: 296.33145}
-  m_Center: {x: 140.6488, y: 196.28758, z: 141.93309}
+  m_Size: {x: 275.09573, y: 382.43665, z: 56.692226}
+  m_Center: {x: 140.6488, y: 196.28758, z: -22.71841}
 --- !u!114 &929983337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5713,7 +5713,7 @@ GameObject:
   - component: {fileID: 4558559862566059510}
   - component: {fileID: 929983333}
   - component: {fileID: 929983337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gatedoor_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6131,7 +6131,7 @@ GameObject:
   - component: {fileID: 4443299267608641521}
   - component: {fileID: 651762575}
   - component: {fileID: 651762579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gatedoor_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

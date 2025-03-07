@@ -187,7 +187,7 @@ public class GridMovement : MonoBehaviour
     private bool IsBlocked(Vector3 position)
     {
         Vector3 checkPosition = position + Vector3.up * (characterHeightOffset / 2);
-        Vector3 halfExtents = new Vector3(gridSize.x / 2, characterHeightOffset, gridSize.y / 2);
+        Vector3 halfExtents = new Vector3(gridSize.x / 10, characterHeightOffset * 9.0f, gridSize.y / 10);
 
         return Physics.CheckBox(checkPosition, halfExtents, Quaternion.identity, obstacleLayer);
     }
