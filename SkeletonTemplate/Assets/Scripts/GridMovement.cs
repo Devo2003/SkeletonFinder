@@ -128,6 +128,36 @@ public class GridMovement : MonoBehaviour
 
     void Update()
     {
+        playerController();
+    }
+
+    private void MoveTowardsTarget()
+    {
+        float newY = DetectHeightAtPosition(targetPosition);
+
+        // If moving UP, snap to the new height instantly
+        if (newY > transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        }
+        else
+        {
+            // If moving down or on the same level, smoothly adjust Y
+            transform.position = Vector3.MoveTowards(transform.position,
+                                                     new Vector3(targetPosition.x, newY, targetPosition.z),
+                                                     moveSpeed * Time.deltaTime);
+        }
+
+        // Once close enough to the target, snap to final position
+        if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
+        {
+            transform.position = targetPosition;
+            isMoving = false;
+        }
+    }
+
+    public void playerController()
+    {
         if (isMoving)
         {
             MoveTowardsTarget();
@@ -136,38 +166,26 @@ public class GridMovement : MonoBehaviour
 
         Vector2 input = Vector2.zero;
 
+        // Prioritize vertical input first
         if (Input.GetKey(KeyCode.W))
-            input.x = -1;
+            input = new Vector2(-1, 0);
         else if (Input.GetKey(KeyCode.S))
-            input.x = 1;
-
-        if (Input.GetKey(KeyCode.A))
-            input.y = -1;
+            input = new Vector2(1, 0);
+        else if (Input.GetKey(KeyCode.A))
+            input = new Vector2(0, -1);
         else if (Input.GetKey(KeyCode.D))
-            input.y = 1;
+            input = new Vector2(0, 1);
 
         if (input != Vector2.zero)
         {
             Vector3 newTarget = transform.position + new Vector3(input.x * gridSize.x, 0, input.y * gridSize.y);
             newTarget.y = DetectHeightAtPosition(newTarget);
 
-            if (newTarget != targetPosition && !IsBlocked(newTarget)) // Check for obstacles
+            if (newTarget != targetPosition && !IsBlocked(newTarget))
             {
                 targetPosition = newTarget;
                 isMoving = true;
             }
-        }
-    }
-
-    private void MoveTowardsTarget()
-    {
-        targetPosition.y = DetectHeightAtPosition(targetPosition);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, targetPosition) < snapThreshold)
-        {
-            transform.position = targetPosition;
-            isMoving = false;
         }
     }
 
