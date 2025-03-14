@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8114622580656484718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Witch Movement/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1280871392
+    data2: 3859628672
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5952321688073204679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Witch Movement
+  m_EditorClassIdentifier: 
+  Path: event:/Witch Movement
+  Guid:
+    Data1: -1333157151
+    Data2: 1197333820
+    Data3: -1631508037
+    Data4: -119544395
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8114622580656484718}
+  MinDistance: 0
+  MaxDistance: 10000
+  Length: 40944
 --- !u!114 &-4464703749973562602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10,9 +62,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Telekinesis Spell/Telekinesis
+  m_Name: parameter:/Telekinesis Spell/Spell Part
   m_EditorClassIdentifier: 
-  Name: Telekinesis
+  Name: Spell Part
   StudioPath: 
   Min: 0
   Max: 2
@@ -39,10 +91,61 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638761576520235857
+  lastModified: 638775753218109306
   FileSizes:
   - Name: Desktop
-    Value: 131872
+    Value: 2287040
+  Exists: 1
+--- !u!114 &-2290779005060985090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Level Music
+  m_EditorClassIdentifier: 
+  Path: event:/Level Music
+  Guid:
+    Data1: -2070347424
+    Data2: 1331077343
+    Data3: -1093418085
+    Data4: 874512488
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70243
+--- !u!114 &-1206386847607101735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Burn Spell/Spell Part
+  m_EditorClassIdentifier: 
+  Name: Spell Part
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 462063599
+    data2: 552553819
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -61,13 +164,45 @@ MonoBehaviour:
   - {fileID: -4279033849132342388}
   EditorEvents:
   - {fileID: 7073036488752188395}
+  - {fileID: 4845013699060971496}
+  - {fileID: -2290779005060985090}
+  - {fileID: 2738193514153479653}
+  - {fileID: -5952321688073204679}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4279033849132342388}
   StringsBanks:
   - {fileID: 3583640816869631040}
-  cacheTime: 638761576520282683
+  cacheTime: 638775753218147348
   cacheVersion: 131616
+--- !u!114 &2738193514153479653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Burn Spell
+  m_EditorClassIdentifier: 
+  Path: event:/Burn Spell
+  Guid:
+    Data1: -1313272876
+    Data2: 1174551890
+    Data3: -175764044
+    Data4: 807972208
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1206386847607101735}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 56500
 --- !u!114 &3583640816869631040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,11 +218,38 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638761576520282683
+  lastModified: 638775753218147348
   FileSizes:
   - Name: Desktop
-    Value: 820
+    Value: 1042
   Exists: 1
+--- !u!114 &4845013699060971496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  Guid:
+    Data1: -1665405345
+    Data2: 1273974152
+    Data3: -977134206
+    Data4: -1344885148
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21333
 --- !u!114 &7073036488752188395
 MonoBehaviour:
   m_ObjectHideFlags: 0
