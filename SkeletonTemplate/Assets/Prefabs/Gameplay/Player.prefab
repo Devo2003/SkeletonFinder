@@ -976,7 +976,6 @@ GameObject:
   - component: {fileID: 6440146221834602830}
   - component: {fileID: 9063035861659760692}
   - component: {fileID: 492189781973941906}
-  - component: {fileID: 380433048524103302}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1112,20 +1111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  snapThreshold: 0.5
-  gridSize: {x: 2, y: 2}
-  gridWidth: 5
-  gridHeight: 5
-  gridColor: {r: 0, g: 1, b: 0, a: 1}
-  gridOrigin: {x: 0, y: 0, z: 0}
-  maxStepHeight: 5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  characterHeightOffset: 1
+  acceleration: 10
+  deceleration: 15
+  rotationSpeed: 10
 --- !u!114 &492189781973941906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,24 +1126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b5860f76d1b496aaf157dc07eb3483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &380433048524103302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7399708541646406832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9aac96d36d3639478a57b82b876eb20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boxSize: {x: 3, y: 2, z: 5}
-  pushForce: 1
-  affectedLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  pushEffect: {fileID: 0}
 --- !u!1 &7803162056422211034
 GameObject:
   m_ObjectHideFlags: 0
