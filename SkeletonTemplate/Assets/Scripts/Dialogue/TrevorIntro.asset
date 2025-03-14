@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dcedebd536e8544985e0d1339ff6c96, type: 3}
-  m_Name: SpellUnlock
+  m_Name: TrevorIntro
   m_EditorClassIdentifier: 
   dialogueLines:
   - Vira! I'm so glad you're alright.
   - I seem to have lost the rest of my body...
-  - But I found your spellbook!
   - Please, let us search for the rest of me.
-  - Equipped with your Telekinesis spell, I know we can succeed!
-  - Try moving some rocks around, they don't look too heavy
+  - I saw your spellbook around here somewhere...
+  - It can't have flown far.
