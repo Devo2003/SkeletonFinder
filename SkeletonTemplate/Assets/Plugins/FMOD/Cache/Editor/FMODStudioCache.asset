@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Witch Movement/Speed
+  m_Name: parameter:/Witch Movement/WitchSpeed
   m_EditorClassIdentifier: 
-  Name: Speed
+  Name: WitchSpeed
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 5
   Default: 0
   ID:
     data1: 1280871392
@@ -50,7 +50,7 @@ MonoBehaviour:
   Parameters:
   - {fileID: -8114622580656484718}
   MinDistance: 0
-  MaxDistance: 10000
+  MaxDistance: 10
   Length: 40944
 --- !u!114 &-4464703749973562602
 MonoBehaviour:
@@ -91,7 +91,7 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638775753218109306
+  lastModified: 638775794835087579
   FileSizes:
   - Name: Desktop
     Value: 2287040
@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: -4279033849132342388}
   StringsBanks:
   - {fileID: 3583640816869631040}
-  cacheTime: 638775753218147348
+  cacheTime: 638775794835109347
   cacheVersion: 131616
 --- !u!114 &2738193514153479653
 MonoBehaviour:
@@ -218,10 +218,10 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638775753218147348
+  lastModified: 638775794835109347
   FileSizes:
   - Name: Desktop
-    Value: 1042
+    Value: 1050
   Exists: 1
 --- !u!114 &4845013699060971496
 MonoBehaviour:

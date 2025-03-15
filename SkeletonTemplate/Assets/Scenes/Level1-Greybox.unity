@@ -28338,6 +28338,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1301954938564955944, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2949954562726312649, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -28530,6 +28534,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5687799892295117643, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1787482842}
+    - targetCorrespondingSourceObject: {fileID: 5687799892295117643, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787482847}
   m_SourcePrefab: {fileID: 100100000, guid: 34383aae9fddab744ac6cc635d7e205e, type: 3}
 --- !u!1 &1577023293
 GameObject:
@@ -31208,6 +31215,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1787482847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787482837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 1631870475}
 --- !u!1 &1790654686
 GameObject:
   m_ObjectHideFlags: 0
@@ -38043,6 +38063,10 @@ PrefabInstance:
     - target: {fileID: 4530587219266731304, guid: b5a2bea56ca5d4e49bed891e603f1c28, type: 3}
       propertyPath: m_Name
       value: LevelMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530587219266731304, guid: b5a2bea56ca5d4e49bed891e603f1c28, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9216239294578332653, guid: b5a2bea56ca5d4e49bed891e603f1c28, type: 3}
       propertyPath: m_LocalPosition.x

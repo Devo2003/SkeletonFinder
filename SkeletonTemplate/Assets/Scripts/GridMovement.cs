@@ -8,6 +8,10 @@ public class GridMovement : MonoBehaviour
     public float deceleration = 15f;   // How fast we slow down
     public float rotationSpeed = 10f;  // How fast the character turns
 
+    // Used for implementing witch movement SFX
+    public FMOD.Studio.EventInstance movementSFX;
+    public string witchSpeed = "WitchSpeed";
+
     private Rigidbody rb;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
@@ -28,11 +32,16 @@ public class GridMovement : MonoBehaviour
 
         // Assuming your player model is a child of the main object
         playerModel = transform.GetChild(0); // Assuming the model is the first child
+
+        movementSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Witch Movement");
+        movementSFX.start();
     }
 
     void Update()
     {
         ProcessInput();
+        movementSFX.setParameterByName(witchSpeed, (Mathf.Abs(moveVelocity.x) + Mathf.Abs(moveVelocity.z)));
+        movementSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
     }
 
     void FixedUpdate()
