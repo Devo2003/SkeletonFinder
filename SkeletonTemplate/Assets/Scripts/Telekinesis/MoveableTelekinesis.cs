@@ -43,6 +43,8 @@ public class MoveableTelekinesis : TelekinesisObject
 
     public override void ActivateTelekinesis()
     {
+        if (!TelekinesisController.Instance.isTelekinesisActive) return;
+
         isBeingMoved = true;
         timer = telekinesisDuration;
 
@@ -91,9 +93,10 @@ public class MoveableTelekinesis : TelekinesisObject
         }
     }
 
+
     private void OnMouseEnter()
     {
-        if (!isBeingMoved && objectRenderer)
+        if (TelekinesisController.Instance.isTelekinesisActive && !isBeingMoved && objectRenderer)
         {
             objectRenderer.material.color = Color.cyan;
         }
@@ -101,7 +104,7 @@ public class MoveableTelekinesis : TelekinesisObject
 
     private void OnMouseExit()
     {
-        if (!isBeingMoved && objectRenderer)
+        if (objectRenderer)
         {
             objectRenderer.material.color = originalColor;
         }
