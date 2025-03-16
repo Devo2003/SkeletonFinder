@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -8,7 +9,8 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject dialogueUI;
-    private Queue<string> dialogueQueue = new Queue<string>();
+    [SerializeField] private Image characterImage; // Add UI Image to show the character's image
+    private Queue<DialogueLine> dialogueQueue = new Queue<DialogueLine>(); // Queue to store dialogue lines with character info
     private bool isDialogueActive = false;
     public bool isEndingDialogue = false; // Check if it's the last dialogue
 
@@ -22,6 +24,8 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        characterImage.enabled = false; //disables character sprite at runtime
     }
 
     public void StartDialogue(DialogueData dialogue, bool isEndGameDialogue = false)
@@ -31,10 +35,12 @@ public class DialogueManager : MonoBehaviour
         isEndingDialogue = isEndGameDialogue;
         isDialogueActive = true;
         dialogueUI.SetActive(true);
+        characterImage.enabled = true;
         dialogueText.text = "";
         dialogueQueue.Clear();
 
-        foreach (string line in dialogue.dialogueLines)
+        // Queue each line of dialogue along with the character's associated image
+        foreach (DialogueLine line in dialogue.dialogueLines)
         {
             dialogueQueue.Enqueue(line);
         }
@@ -50,7 +56,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        dialogueText.text = dialogueQueue.Dequeue();
+        DialogueLine currentLine = dialogueQueue.Dequeue();
+        dialogueText.text = currentLine.text;
+
+        // Set the character image for the current line
+        characterImage.sprite = currentLine.characterImage; // Assuming each DialogueLine has a character image
     }
 
     private void Update()
@@ -66,20 +76,17 @@ public class DialogueManager : MonoBehaviour
         isDialogueActive = false;
         dialogueText.text = "";
         dialogueUI.SetActive(false);
+        characterImage.enabled = false;
 
         if (isEndingDialogue)
         {
             Debug.Log("Ending game...");
             EndGame();
         }
- 
     }
 
     private void EndGame()
     {
-
-        // Quit the game or load an end scene
         Application.Quit(); // Closes the game
-        // SceneManager.LoadScene("EndScene"); // Uncomment if you have an end scene
     }
 }

@@ -17,12 +17,14 @@ public class TelekinesisController : MonoBehaviour
     [Header("Cooldown Settings")]
     public float telekinesisCooldown = 3f;
     private bool isCooldownActive = false;
-    public TextMeshProUGUI cooldownText;
+    public Image cooldownImage; // Ensure this is an Image with "Fill" set in its Image component
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        cooldownImage.enabled = false; // Initially disabled
 
         if (telekinesisButton != null)
         {
@@ -56,6 +58,7 @@ public class TelekinesisController : MonoBehaviour
         if (isTelekinesisActive)
         {
             StartCoroutine(TelekinesisCooldown());
+            cooldownImage.enabled = true;
         }
 
         // Remove focus to prevent spacebar triggering
@@ -71,25 +74,19 @@ public class TelekinesisController : MonoBehaviour
         while (cooldown > 0)
         {
             cooldown -= Time.deltaTime;
-            if (cooldownText != null)
-            {
-                cooldownText.text = $"Cooldown: {Mathf.Ceil(cooldown)}s";
-            }
+            cooldownImage.fillAmount = cooldown / telekinesisCooldown; // Update the fill amount of the image
+
             yield return null;
         }
 
         isCooldownActive = false;
         isTelekinesisActive = false;
+        cooldownImage.enabled = false; // Disable the image once cooldown is over
 
         if (buttonOutline != null)
         {
             buttonOutline.effectColor = Color.clear;
             buttonOutline.effectDistance = new Vector2(0, 0);
-        }
-
-        if (cooldownText != null)
-        {
-            cooldownText.text = "";
         }
     }
 
@@ -97,7 +94,7 @@ public class TelekinesisController : MonoBehaviour
     {
         if (Camera.main == null)
         {
-            Debug.LogError("No Main Camera found! Ensure your camera is tagged as 'MainCamera'.");
+            Debug.LogError("No Main Camera found! Ensure your camera is tagged as 'MainCamera'!");
             return;
         }
 

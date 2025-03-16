@@ -7,7 +7,14 @@ using TMPro;
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "Dialogue/DialogueData")]
 public class DialogueData : ScriptableObject
 {
-    public string[] dialogueLines; // Array of dialogue lines
+    public DialogueLine[] dialogueLines; // Array of dialogue lines
+}
+
+[System.Serializable]
+public class DialogueLine
+{
+    public string text;
+    public Sprite characterImage;
 }
 
 
