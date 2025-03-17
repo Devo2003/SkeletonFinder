@@ -9,9 +9,11 @@ public class TelekinesisController : MonoBehaviour
     public static TelekinesisController Instance;
     public bool isTelekinesisActive = false; // Toggle state
     public Button telekinesisButton; // UI Button to prime telekinesis
+    public Image telekinesisBox;
     public Outline buttonOutline; // Outline component for glow effect
 
     private TelekinesisObject selectedObject;
+    private bool hasSelectedObject = false;
     private bool hasTelekinesis = false; // Track if telekinesis is unlocked
 
     [Header("Cooldown Settings")]
@@ -25,6 +27,7 @@ public class TelekinesisController : MonoBehaviour
         else Destroy(gameObject);
 
         cooldownImage.enabled = false; // Initially disabled
+        telekinesisBox.enabled = false;
 
         if (telekinesisButton != null)
         {
@@ -49,16 +52,23 @@ public class TelekinesisController : MonoBehaviour
         isTelekinesisActive = !isTelekinesisActive;
         Debug.Log("Telekinesis " + (isTelekinesisActive ? "Activated" : "Deactivated"));
 
+
+        //Highlight Selectable Objects
+        foreach (MoveableTelekinesis obj in FindObjectsOfType<MoveableTelekinesis>())
+        {
+            obj.ToggleHighlight(isTelekinesisActive);
+        }
+
         if (buttonOutline != null)
         {
             buttonOutline.effectColor = isTelekinesisActive ? Color.cyan : Color.clear;
             buttonOutline.effectDistance = isTelekinesisActive ? new Vector2(5, 5) : new Vector2(0, 0);
-        }
-
-        if (isTelekinesisActive)
+        } 
+        
+        //Clear all highlights when telekinesis is inactive
+        if (!isTelekinesisActive)
         {
-            StartCoroutine(TelekinesisCooldown());
-            cooldownImage.enabled = true;
+            ClearAllHighlights();
         }
 
         // Remove focus to prevent spacebar triggering
@@ -66,15 +76,19 @@ public class TelekinesisController : MonoBehaviour
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
 
-
-    public void StartCooldown()
+    private void ClearAllHighlights()
     {
-        StartCoroutine(TelekinesisCooldown());
+        foreach (MoveableTelekinesis obj in FindObjectsOfType<MoveableTelekinesis>())
+        {
+            obj.ToggleHighlight(false);
+        }
     }
+
     private IEnumerator TelekinesisCooldown()
     {
 
         isCooldownActive = true;
+        cooldownImage.enabled = true;
 
         float cooldown = telekinesisCooldown;
         while (cooldown > 0)
@@ -94,10 +108,15 @@ public class TelekinesisController : MonoBehaviour
             buttonOutline.effectColor = Color.clear;
             buttonOutline.effectDistance = new Vector2(0, 0);
         }
+
+        hasSelectedObject = false;
+        ClearAllHighlights();
     }
 
     private void SelectObject()
     {
+        if (hasSelectedObject || Camera.main == null) return; //Blocks multiple selections
+        
         if (Camera.main == null)
         {
             Debug.LogError("No Main Camera found! Ensure your camera is tagged as 'MainCamera'!");
@@ -114,11 +133,22 @@ public class TelekinesisController : MonoBehaviour
                 Debug.Log("Selected Telekinesis Object: " + obj.gameObject.name);
                 selectedObject = obj;
                 selectedObject.ActivateTelekinesis(); // Let the object handle movement
+
+                hasSelectedObject = true;
+                ClearAllHighlights();
             }
             else
             {
                 Debug.Log("No valid TelekinesisObject found on " + hit.collider.gameObject.name);
             }
+        }
+    }
+
+    public void EndTelekinesis()
+    {
+        if (isTelekinesisActive)
+        {
+            StartCoroutine(TelekinesisCooldown()); //Start cooldown after use ends
         }
     }
 
@@ -129,6 +159,7 @@ public class TelekinesisController : MonoBehaviour
         if (telekinesisButton != null)
         {
             telekinesisButton.interactable = true;
+            telekinesisBox.enabled = true;
         }
     }
 }

@@ -19,6 +19,10 @@ public class MoveableTelekinesis : TelekinesisObject
     public TextMeshProUGUI timerText;
     public GameObject telekinesisIndicator;
 
+    [Header("Particle Effect")]
+    public ParticleSystem movementParticlesPrefab; //Reference
+    private ParticleSystem movementParticles; //Instantiate
+
     private Renderer objectRenderer;
     private Color originalColor;
 
@@ -29,6 +33,12 @@ public class MoveableTelekinesis : TelekinesisObject
         {
             originalColor = objectRenderer.material.color;
         }
+
+        if (movementParticlesPrefab != null)
+        {
+            movementParticles = Instantiate(movementParticlesPrefab, transform.position, Quaternion.identity);
+            movementParticles.Stop(); //Instantiates it but ensures its disabled
+        }
     }
 
     private void Update()
@@ -36,7 +46,6 @@ public class MoveableTelekinesis : TelekinesisObject
         if (isBeingMoved)
         {
             HandleMovement();
-            HandleRotation();
             UpdateTimer();
         }
     }
@@ -44,7 +53,11 @@ public class MoveableTelekinesis : TelekinesisObject
     public override void ActivateTelekinesis()
     {
         if (!TelekinesisController.Instance.isTelekinesisActive) return;
-
+        if (movementParticles != null)
+        {
+            Debug.Log("Particles Activated");
+            movementParticles.Play();
+        }
         isBeingMoved = true;
         timer = telekinesisDuration;
 
@@ -52,30 +65,36 @@ public class MoveableTelekinesis : TelekinesisObject
         RemoveHighlight();
     }
 
+
+    private bool particlesActive = false;
     private void HandleMovement()
     {
-        float moveX = 0f;
-        float moveZ = 0f;
+        if (Camera.main == null) return;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) moveZ = -1f;
-        if (Input.GetKey(KeyCode.RightArrow)) moveZ = 1f;
-        if (Input.GetKey(KeyCode.UpArrow)) moveX = -1f;
-        if (Input.GetKey(KeyCode.DownArrow)) moveX = 1f;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            // Get target position based on raycast hit but lock Y position
+            Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 
-        Vector3 moveDirection = new Vector3(moveX, 0, moveZ).normalized;
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+            // Move toward target position
+            transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            if (movementParticles != null)
+            {
+                movementParticles.transform.position = transform.position;
+
+                if (!particlesActive)
+                {
+                    Debug.Log("Particles Activated");
+                    movementParticles.Play();
+                    particlesActive = true;
+                }
+            }
+        }
     }
 
-    private void HandleRotation()
-    {
-        float rotateY = 0f;
-
-        if (Input.GetKey(KeyCode.Q)) rotateY = -1f;
-        if (Input.GetKey(KeyCode.E)) rotateY = 1f;
-
-        transform.Rotate(Vector3.up * rotateY * rotationSpeed * Time.deltaTime, Space.World);
-    }
-
+    private bool wasBeingMoved = false;
     private void UpdateTimer()
     {
         timer -= Time.deltaTime;
@@ -87,10 +106,26 @@ public class MoveableTelekinesis : TelekinesisObject
 
         if (timer <= 0)
         {
-            isBeingMoved = false;
-            if (telekinesisIndicator) telekinesisIndicator.SetActive(false);
-            if (timerText) timerText.text = "";
+            if (isBeingMoved) //stops particles when TK timer ends
+            {
+
+                isBeingMoved = false;
+                if (telekinesisIndicator) telekinesisIndicator.SetActive(false);
+                if (timerText) timerText.text = "";
+
+                TelekinesisController.Instance.EndTelekinesis(); //Begin Cooldown AFTER use
+
+                if (movementParticles != null && particlesActive)
+                {
+                    Debug.Log("Particles Stopped");
+                    movementParticles.Stop();
+                    particlesActive = false;
+                }
+            }
         }
+
+        wasBeingMoved = isBeingMoved;
+
     }
 
 
@@ -107,6 +142,14 @@ public class MoveableTelekinesis : TelekinesisObject
         if (objectRenderer)
         {
             objectRenderer.material.color = originalColor;
+        }
+    }
+
+    public void ToggleHighlight(bool state)
+    {
+        if (objectRenderer)
+        {
+            objectRenderer.material.color = state ? Color.cyan : originalColor;
         }
     }
 

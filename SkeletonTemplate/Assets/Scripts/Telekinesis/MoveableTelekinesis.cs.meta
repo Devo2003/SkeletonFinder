@@ -3,7 +3,10 @@ guid: 9be5bf6d56626c9498609ec4e720a596
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - timerText: {instanceID: 0}
+  - telekinesisIndicator: {instanceID: 0}
+  - movementParticlesPrefab: {fileID: 5908303730706782471, guid: 423864eba820dde4aa6b737df6a5c5a3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
