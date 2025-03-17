@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,8 +66,14 @@ public class TelekinesisController : MonoBehaviour
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
 
+
+    public void StartCooldown()
+    {
+        StartCoroutine(TelekinesisCooldown());
+    }
     private IEnumerator TelekinesisCooldown()
     {
+
         isCooldownActive = true;
 
         float cooldown = telekinesisCooldown;
