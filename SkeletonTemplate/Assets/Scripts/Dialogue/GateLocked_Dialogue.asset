@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dcedebd536e8544985e0d1339ff6c96, type: 3}
-  m_Name: SpellCollection
+  m_Name: GateLocked_Dialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: My spellbook!
+  - text: This old gate is always rusted shut...
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: Did you lose your key, dear?
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
-  - text: I knew it was close by!
+  - text: I guess so...
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: Now that I can cast magic again, this should be a breeze.
-    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
-  - text: You should try using telekinesis on these rocks.
-    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: They don't look too heavy.
-    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: Click to prime your magic, then click to cast.
+  - text: But like your spellbook, it must be near.
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
