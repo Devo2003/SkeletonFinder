@@ -20,7 +20,7 @@ public class FOV : MonoBehaviour
     public float detectionTime = 2f; // The time required to detect the player (2 seconds)
     private float currentDetectionTime = 0f; // Timer for detection
 
-    public MainMenu menu;
+    //public MainMenu menu;
 
     private Transform player; // Reference to player
 
@@ -97,7 +97,7 @@ public class FOV : MonoBehaviour
 
 
                 // Add detection logic here, e.g., load a new scene or trigger an alarm
-                this.menu.ShowGameOver();
+                //this.menu.ShowGameOver();
                 //Retry();
                 //SceneManager.LoadScene("Game Over");
             }
