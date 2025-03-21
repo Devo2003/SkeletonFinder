@@ -8,7 +8,8 @@ public class MainMenuController : MonoBehaviour
     // Start the game by loading the main game scene
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        //SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("IntroVideo");
     }
 
     // Load the credits scene
