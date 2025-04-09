@@ -1,0 +1,11 @@
+{033c1103-7d13-48d2-8a2b-387c603f2e74} bank:/Master
+{9b2131d7-0c68-0490-0c62-b28291cc28ec} bank:/Master.strings
+{dfcfeb50-8385-43d3-aa17-c9ed8460a8d1} bus:/
+{51a3d7ee-e037-4c1f-ba7e-dd558fcea84d} bus:/Reverb
+{9cbbee5f-4d88-4bef-821d-c2c564aed6af} event:/Ambience
+{b1b90bd4-3d52-4602-b40d-86f570ad2830} event:/Burn Spell
+{84990160-a0df-4f56-9bc3-d3be68002034} event:/Level Music
+{19e42ba1-c3cc-49a9-8926-ff6cd562ea51} event:/Telekinesis Spell
+{b089a2e1-dd3c-475d-bb29-c19eb5e5dff8} event:/Witch Movement
+{adfa21c8-1114-4536-9294-a2838e97497a} parameter:/Spell Part
+{7a8da85b-cd8b-4eeb-a120-6caada4c0e1e} parameter:/WitchSpeed

@@ -52,30 +52,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 10
   Length: 40944
---- !u!114 &-4464703749973562602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Telekinesis Spell/Spell Part
-  m_EditorClassIdentifier: 
-  Name: Spell Part
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 462063599
-    data2: 552553819
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-4279033849132342388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,10 +67,10 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638775838579483218
+  lastModified: 638797966657367089
   FileSizes:
   - Name: Desktop
-    Value: 2287040
+    Value: 2289632
   Exists: 1
 --- !u!114 &-2290779005060985090
 MonoBehaviour:
@@ -163,18 +139,101 @@ MonoBehaviour:
   - {fileID: 3583640816869631040}
   - {fileID: -4279033849132342388}
   EditorEvents:
-  - {fileID: 7073036488752188395}
   - {fileID: 4845013699060971496}
   - {fileID: -2290779005060985090}
   - {fileID: 2738193514153479653}
   - {fileID: -5952321688073204679}
+  - {fileID: 1315713371274352277}
+  - {fileID: 2477451717605393029}
+  - {fileID: 485054731180595106}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4279033849132342388}
   StringsBanks:
   - {fileID: 3583640816869631040}
-  cacheTime: 638775838579523244
+  cacheTime: 638797966657382918
   cacheVersion: 131616
+--- !u!114 &485054731180595106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Telekinesis Loop
+  m_EditorClassIdentifier: 
+  Path: event:/Telekinesis Loop
+  Guid:
+    Data1: -1936905852
+    Data2: 1231450041
+    Data3: 1776279487
+    Data4: -914657621
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1315713371274352277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Telekinesis Deactivate
+  m_EditorClassIdentifier: 
+  Path: event:/Telekinesis Deactivate
+  Guid:
+    Data1: -1011404512
+    Data2: 1268022414
+    Data3: 436321470
+    Data4: -1706388538
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2477451717605393029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Telekinesis Prime
+  m_EditorClassIdentifier: 
+  Path: event:/Telekinesis Prime
+  Guid:
+    Data1: -1530389979
+    Data2: 1111049310
+    Data3: -148053365
+    Data4: 1118331887
+  Banks:
+  - {fileID: -4279033849132342388}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2738193514153479653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,10 +277,10 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638775838579523244
+  lastModified: 638797966657382918
   FileSizes:
   - Name: Desktop
-    Value: 1050
+    Value: 1138
   Exists: 1
 --- !u!114 &4845013699060971496
 MonoBehaviour:
@@ -250,31 +309,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 21333
---- !u!114 &7073036488752188395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Telekinesis Spell
-  m_EditorClassIdentifier: 
-  Path: event:/Telekinesis Spell
-  Guid:
-    Data1: 434383777
-    Data2: 1235862476
-    Data3: 1828660873
-    Data4: 1374315221
-  Banks:
-  - {fileID: -4279033849132342388}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -4464703749973562602}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 15506

@@ -21,6 +21,10 @@ public class TelekinesisController : MonoBehaviour
     private bool isCooldownActive = false;
     public Image cooldownImage; // Ensure this is an Image with "Fill" set in its Image component
 
+    public FMOD.Studio.EventInstance telekinesisPrimeSFX;
+    public FMOD.Studio.EventInstance telekinesisLoopSFX;
+    public FMOD.Studio.EventInstance telekinesisDeactivateSFX;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -51,6 +55,10 @@ public class TelekinesisController : MonoBehaviour
 
         isTelekinesisActive = !isTelekinesisActive;
         Debug.Log("Telekinesis " + (isTelekinesisActive ? "Activated" : "Deactivated"));
+
+        telekinesisPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Prime");
+        telekinesisPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        telekinesisPrimeSFX.start();
 
 
         //Highlight Selectable Objects
@@ -115,6 +123,7 @@ public class TelekinesisController : MonoBehaviour
 
     private void SelectObject()
     {
+
         if (hasSelectedObject || Camera.main == null) return; //Blocks multiple selections
         
         if (Camera.main == null)
@@ -130,6 +139,11 @@ public class TelekinesisController : MonoBehaviour
 
             if (obj != null)
             {
+                telekinesisPrimeSFX.release();
+                telekinesisLoopSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Loop");
+                telekinesisLoopSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+                telekinesisLoopSFX.start();
+
                 Debug.Log("Selected Telekinesis Object: " + obj.gameObject.name);
                 selectedObject = obj;
                 selectedObject.ActivateTelekinesis(); // Let the object handle movement
@@ -146,10 +160,18 @@ public class TelekinesisController : MonoBehaviour
 
     public void EndTelekinesis()
     {
+
         if (isTelekinesisActive)
         {
+            telekinesisLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            telekinesisLoopSFX.release();
+            telekinesisDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Deactivate");
+            telekinesisDeactivateSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            telekinesisDeactivateSFX.start();
+
             StartCoroutine(TelekinesisCooldown()); //Start cooldown after use ends
         }
+
     }
 
     // Call this method when the player collects the spellbook
