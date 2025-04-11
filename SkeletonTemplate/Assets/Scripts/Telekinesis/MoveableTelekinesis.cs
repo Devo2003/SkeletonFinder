@@ -67,6 +67,7 @@ public class MoveableTelekinesis : TelekinesisObject
 
 
     private bool particlesActive = false;
+    private Vector3 velocity = Vector3.zero;
     private void HandleMovement()
     {
         if (Camera.main == null) return;
@@ -78,7 +79,7 @@ public class MoveableTelekinesis : TelekinesisObject
             Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 
             // Move toward target position
-            transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, 0.1f);
 
             if (movementParticles != null)
             {
