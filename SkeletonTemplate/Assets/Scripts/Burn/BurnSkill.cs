@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BurnSkill : MonoBehaviour
 {
@@ -13,28 +14,55 @@ public class BurnSkill : MonoBehaviour
     public Material highlightMaterial; // Assign a glow/highlight material in the Inspector
     private Material defaultMaterial;
 
-    void Update()
+    [Header("UI")]
+    public Button burnButton;
+    public Image cooldownOverlay;
+
+
+    private void Start()
     {
-        // Toggle burn skill on/off
-        if (hasBurnSkill && Input.GetKeyDown(KeyCode.B))
+        if (burnButton != null)
         {
-            isBurnActive = !isBurnActive;
-            HighlightBurnableObjects(isBurnActive);
-            Debug.Log("Burn Skill " + (isBurnActive ? "Activated" : "Deactivated"));
+            burnButton.onClick.AddListener(ToggleBurnSkill);
         }
 
-        // Cooldown logic
+        if (cooldownOverlay != null)
+        {
+            cooldownOverlay.fillAmount = 0f;
+        }
+    }
+
+    void Update()
+    {
+        if (!hasBurnSkill) return;
+
+        // Keyboard toggle
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleBurnSkill();
+        }
+
+        // Handle cooldown
         if (!canBurn)
         {
             cooldownTimer -= Time.deltaTime;
+            if (cooldownOverlay != null)
+                cooldownOverlay.fillAmount = cooldownTimer / burnCooldown;
+
             if (cooldownTimer <= 0f)
             {
                 canBurn = true;
+                if (cooldownOverlay != null)
+                    cooldownOverlay.fillAmount = 0f;
+
+                if (burnButton != null)
+                    burnButton.interactable = true;
+
                 Debug.Log("Burn Skill Ready!");
             }
         }
 
-        // Use burn skill with cooldown
+        // Use burn skill
         if (isBurnActive && canBurn && Input.GetMouseButtonDown(0))
         {
             TryBurnObject();
@@ -45,6 +73,17 @@ public class BurnSkill : MonoBehaviour
     {
         hasBurnSkill = true;
         Debug.Log("Burn Skill Collected!");
+        if (burnButton != null)
+            burnButton.interactable = true;
+    }
+
+    private void ToggleBurnSkill()
+    {
+        if (!canBurn) return;
+
+        isBurnActive = !isBurnActive;
+        HighlightBurnableObjects(isBurnActive);
+        Debug.Log("Burn Skill " + (isBurnActive ? "Activated" : "Deactivated"));
     }
 
     private void TryBurnObject()
@@ -57,14 +96,21 @@ public class BurnSkill : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 Debug.Log("Object Burned!");
 
+                isBurnActive = false;
+                HighlightBurnableObjects(false);
+
                 canBurn = false;
                 cooldownTimer = burnCooldown;
+
                 Debug.Log("Burn Skill Cooling Down...");
+
+                // Optionally grey out button during cooldown
+                if (burnButton != null)
+                    burnButton.interactable = false;
             }
         }
     }
 
-    // Highlight or reset burnable objects
     private void HighlightBurnableObjects(bool highlight)
     {
         GameObject[] burnableObjects = GameObject.FindGameObjectsWithTag("Burnable");
@@ -76,12 +122,12 @@ public class BurnSkill : MonoBehaviour
             {
                 if (highlight)
                 {
-                    defaultMaterial = renderer.material; // Store original material
-                    renderer.material = highlightMaterial; // Change to highlight material
+                    defaultMaterial = renderer.material;
+                    renderer.material = highlightMaterial;
                 }
                 else
                 {
-                    renderer.material = defaultMaterial; // Reset to original material
+                    renderer.material = defaultMaterial;
                 }
             }
         }
