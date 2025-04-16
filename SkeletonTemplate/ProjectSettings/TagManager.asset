@@ -14,6 +14,8 @@ TagManager:
   - lb_groundTarget
   - lb_perchTarget
   - Burnable
+  - key2
+  - Collectible
   layers:
   - Default
   - TransparentFX

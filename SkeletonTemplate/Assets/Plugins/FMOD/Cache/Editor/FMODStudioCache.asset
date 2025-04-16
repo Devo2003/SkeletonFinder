@@ -67,7 +67,7 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638799594300561306
+  lastModified: 638803924260070264
   FileSizes:
   - Name: Desktop
     Value: 2289632
@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: -4279033849132342388}
   StringsBanks:
   - {fileID: 3583640816869631040}
-  cacheTime: 638799594300561306
+  cacheTime: 638803924260070264
   cacheVersion: 131616
 --- !u!114 &485054731180595106
 MonoBehaviour:
@@ -277,7 +277,7 @@ MonoBehaviour:
   Path: BewitchedBones_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638799594300561306
+  lastModified: 638803924260070264
   FileSizes:
   - Name: Desktop
     Value: 1138

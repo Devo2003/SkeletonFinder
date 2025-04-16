@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CollectibleType { Key, Egg, Bone }
 public class CollectibleItem: MonoBehaviour
 {
+
+    public CollectibleType type;
     public string itemName; // Name of the item to be collected
 
     private void OnTriggerEnter(Collider other)
