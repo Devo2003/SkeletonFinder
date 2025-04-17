@@ -11,6 +11,8 @@ public class BurnSkill : MonoBehaviour
     private float burnCooldown = 3f;
     private float cooldownTimer = 0f;
 
+    public Image burnBox;
+
     public Material highlightMaterial; // Assign a glow/highlight material in the Inspector
     private Material defaultMaterial;
 
@@ -19,6 +21,11 @@ public class BurnSkill : MonoBehaviour
     public Image cooldownOverlay;
 
 
+
+    private void Awake()
+    {
+        burnBox.enabled = false;
+    }
     private void Start()
     {
         if (burnButton != null)
@@ -72,6 +79,7 @@ public class BurnSkill : MonoBehaviour
     public void CollectBurnSkill()
     {
         hasBurnSkill = true;
+        burnBox.enabled = true;
         Debug.Log("Burn Skill Collected!");
         if (burnButton != null)
             burnButton.interactable = true;

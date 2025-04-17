@@ -47,6 +47,10 @@ public class TelekinesisController : MonoBehaviour
         {
             SelectObject();
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ToggleTelekinesis();
+        }
     }
 
     private void ToggleTelekinesis()

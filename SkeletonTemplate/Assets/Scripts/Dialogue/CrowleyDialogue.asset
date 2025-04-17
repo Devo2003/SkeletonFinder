@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcedebd536e8544985e0d1339ff6c96, type: 3}
+  m_Name: CrowleyDialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: Hello tiny things.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Hello there...
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: Crowley
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Vira, look! She has my bones!
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: That she does darling...
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: Excuse me Miss Crowley, my husband's ribcage...
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: CAGE?!?!
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Not how you're thinking my avian friend.
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: Your nest is made of pieces of me that I wish to have back.
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: You wants my rocky sticks?
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: 'Not sticks...or rocks...but yes, please. '
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: I coulds give them back...if you aids me.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Magics made me too big, I can not move from my nest.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Magics also blew my eggies away.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: If you can get them for me, I will gives you my rocky sticks.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: We can do that! But where should we look?
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: The Northern area of the graveyard will have some, starts there.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: I have five eggies in total.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
