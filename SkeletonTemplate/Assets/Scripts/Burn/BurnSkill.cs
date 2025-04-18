@@ -20,6 +20,10 @@ public class BurnSkill : MonoBehaviour
     public Button burnButton;
     public Image cooldownOverlay;
 
+    public FMOD.Studio.EventInstance burnPrimeSFX;
+    public FMOD.Studio.EventInstance burnLoopSFX;
+    public FMOD.Studio.EventInstance burnDeactivateSFX;
+
 
 
     private void Awake()
@@ -92,6 +96,15 @@ public class BurnSkill : MonoBehaviour
         isBurnActive = !isBurnActive;
         HighlightBurnableObjects(isBurnActive);
         Debug.Log("Burn Skill " + (isBurnActive ? "Activated" : "Deactivated"));
+
+        burnPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Prime");
+        burnPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        burnPrimeSFX.start();
+
+        burnPrimeSFX.release();
+        burnLoopSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Loop");
+        burnLoopSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+        burnLoopSFX.start();
     }
 
     private void TryBurnObject()
@@ -101,6 +114,12 @@ public class BurnSkill : MonoBehaviour
         {
             if (hit.collider.CompareTag("Burnable"))
             {
+                burnLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                burnLoopSFX.release();
+                burnDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Deactivate");
+                burnDeactivateSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+                burnDeactivateSFX.start();
+
                 Destroy(hit.collider.gameObject);
                 Debug.Log("Object Burned!");
 
