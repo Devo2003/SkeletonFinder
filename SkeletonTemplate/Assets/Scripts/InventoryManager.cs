@@ -16,6 +16,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        keyObjectToEnable.SetActive(false);
     }
 
     public void AddEgg()
