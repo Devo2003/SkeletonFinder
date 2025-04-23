@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum CollectibleType { Key, Egg, Bone }
-public class CollectibleItem: MonoBehaviour
+public class CollectibleItem : MonoBehaviour
 {
 
     public CollectibleType type;
     public string itemName; // Name of the item to be collected
+    public GameObject inspectModelPrefab;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log($"Collected: {itemName}, Showing model: {inspectModelPrefab?.name}");
             PlayerInventory.CollectItem(itemName);
+            InspectUI.Instance.InspectItem(itemName, inspectModelPrefab);
             Destroy(gameObject); // Destroy item after collection
         }
     }
@@ -33,4 +36,3 @@ public static class PlayerInventory
         return collectedItems.Contains(itemName);
     }
 }
-
