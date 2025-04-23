@@ -97,14 +97,27 @@ public class BurnSkill : MonoBehaviour
         HighlightBurnableObjects(isBurnActive);
         Debug.Log("Burn Skill " + (isBurnActive ? "Activated" : "Deactivated"));
 
-        burnPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Prime");
-        burnPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        burnPrimeSFX.start();
+        if (isBurnActive)
+        {
+            burnLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            burnLoopSFX.release();
+            burnPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Prime");
+            burnPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            burnPrimeSFX.start();
 
-        burnPrimeSFX.release();
-        burnLoopSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Loop");
-        burnLoopSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        burnLoopSFX.start();
+            burnPrimeSFX.release();
+            burnLoopSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Loop");
+            burnLoopSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            burnLoopSFX.start();
+        }
+        else
+        {
+            burnLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            burnLoopSFX.release();
+            burnDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Deactivate");
+            burnDeactivateSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            burnDeactivateSFX.start();
+        }
     }
 
     private void TryBurnObject()

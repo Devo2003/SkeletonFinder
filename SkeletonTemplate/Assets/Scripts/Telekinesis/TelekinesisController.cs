@@ -57,12 +57,26 @@ public class TelekinesisController : MonoBehaviour
     {
         if (!hasTelekinesis || isCooldownActive) return; // Prevent activation if not unlocked or on cooldown
 
+        if (!isTelekinesisActive)
+        {
+            telekinesisLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            telekinesisLoopSFX.release();
+            telekinesisPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Prime");
+            telekinesisPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            telekinesisPrimeSFX.start();
+        }
+        else
+        {
+            telekinesisLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            telekinesisLoopSFX.release();
+            telekinesisDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Deactivate");
+            telekinesisDeactivateSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
+            telekinesisDeactivateSFX.start();
+        }
+        
+
         isTelekinesisActive = !isTelekinesisActive;
         Debug.Log("Telekinesis " + (isTelekinesisActive ? "Activated" : "Deactivated"));
-
-        telekinesisPrimeSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Prime");
-        telekinesisPrimeSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
-        telekinesisPrimeSFX.start();
 
 
         //Highlight Selectable Objects
@@ -164,17 +178,20 @@ public class TelekinesisController : MonoBehaviour
 
     public void EndTelekinesis()
     {
-
+        
         if (isTelekinesisActive)
         {
+            
             telekinesisLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             telekinesisLoopSFX.release();
             telekinesisDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Telekinesis Deactivate");
             telekinesisDeactivateSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
             telekinesisDeactivateSFX.start();
+            
 
             StartCoroutine(TelekinesisCooldown()); //Start cooldown after use ends
         }
+        
 
     }
 
