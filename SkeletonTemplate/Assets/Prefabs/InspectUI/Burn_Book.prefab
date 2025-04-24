@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5576740571498033052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 147.838
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.155
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -96.427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.96838415
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.23847464
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.010582005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.07245676
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3f25b3bfec7e5e4a9bcd52400775fcd, type: 2}
+    - target: {fileID: 919132149155446097, guid: 55451919b3f936245a928af5af41deb7, type: 3}
+      propertyPath: m_Name
+      value: SpellBook_Lowpoly (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55451919b3f936245a928af5af41deb7, type: 3}
