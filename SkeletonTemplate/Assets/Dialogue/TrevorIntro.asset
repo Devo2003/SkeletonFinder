@@ -19,27 +19,29 @@ MonoBehaviour:
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
   - text: Ough...my head...
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: What's happened?
+  - text: What's happened, Vira?
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
   - text: I don't mean to be cross...but your resurrection-
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
   - text: Resurrection??
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: Oh, Dear, yes Love...
+  - text: Oh, Dear, yes my batty boo...
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
   - text: You're a tad bit...dead.
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
-  - text: Dead?! But I still speak!
+  - text: I see...
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: Yes! Because I brought you back!
+  - text: Firstly, thank you for returning my life to me, my love.
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: I see but one solution for the Wyld Magic...
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: We must find the rest of me.
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: And all the while, find what else the Wyld Magic changed.
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
+  - text: Right then, let's go!
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
-  - text: Or well...some of you...
-    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
-  - text: Some is better than none.
-    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: And I'm sure we can find the rest of me.
-    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
-  - text: Perhaps your spellbook will have some answers for us...
+  - text: Your spellbook should have some answers for us...
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
   - text: I think I saw it nearby!
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
