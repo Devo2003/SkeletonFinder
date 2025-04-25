@@ -126,7 +126,7 @@
 	<object class="MixerBusPanner" id="{adda4618-96bf-422e-afc1-6ce98ec6dfd1}" />
 	<object class="SingleSound" id="{3874830e-9b82-4fbc-a977-7efe7efdb9b3}">
 		<property name="startOffset">
-			<value>22</value>
+			<value>40</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{e541259e-d7ea-430f-938d-aec3db9847d0}</destination>
