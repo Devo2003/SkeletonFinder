@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 109
+  controlID: 268
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 110
+  controlID: 269
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: LightingWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -298,15 +298,15 @@ MonoBehaviour:
     y: 0
     width: 478
     height: 987
-  m_MinSize: {x: 391, y: 411}
+  m_MinSize: {x: 276, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -441,10 +441,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 544}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8e82feff9682feff4ec3feff72d2ffff66e2ffff1ceaffff26eaffff2eeaffff78f5ffff82f5ffff8af5ffffb06800003674000018770000987b0000127c0000387c0000707d0000807f00005a870000b0880000
+      m_ExpandedIDs: b8e5fdffecdefeffde3dffff12fbffffca6a000078700000a475000032780000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 144.64375, y: 15.5466, z: -56.966667}
+    m_Target: {x: 145.43398, y: 20.721582, z: -66.48484}
     speed: 2
-    m_Value: {x: 144.64375, y: 15.5466, z: -56.966667}
+    m_Value: {x: 145.43398, y: 20.721582, z: -66.48484}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -846,13 +846,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.36153916, y: 0.38193512, z: -0.15977979, w: -0.83412164}
+    m_Target: {x: -0.43301845, y: -0.19002941, z: 0.08252341, w: -0.87607294}
     speed: 2
-    m_Value: {x: -0.36168382, y: 0.38359392, z: -0.16049264, w: -0.83443546}
+    m_Value: {x: -0.43359074, y: -0.18891071, z: 0.08195867, w: -0.87726545}
   m_Size:
-    m_Target: 4.328391
+    m_Target: 0.6146161
     speed: 2
-    m_Value: 2.2391427
+    m_Value: 0.61461616
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1009,7 +1009,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OrbColors
+    - Assets/Models/Decoration/Wagon
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1017,30 +1017,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/OrbColors
+  - Assets/Models/Decoration/Wagon
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHub\SkeletonFinder\SkeletonTemplate
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 91}
-    m_SelectedIDs: 8c9e0000
-    m_LastClickedID: 40588
-    m_ExpandedIDs: 00000000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000889e0000
+    scrollPos: {x: 0, y: 76}
+    m_SelectedIDs: 9c980100
+    m_LastClickedID: 104604
+    m_ExpandedIDs: 00000000709a0000729a0000749a0000769a0000789a00007a9a00007c9a00007e9a0000ce9a0000d09a0000d89a0000fabd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Shed
+      m_OriginalName: Shed
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 39762
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -1054,7 +1054,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000369e0000389e00003a9e00003c9e00003e9e0000409e0000429e0000449e0000
+    m_ExpandedIDs: 00000000709a0000729a0000749a0000769a0000789a00007a9a00007c9a00007e9a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1211,9 +1211,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1382
+    x: 1442
     y: 73
-    width: 537
+    width: 477
     height: 966
   m_SerializedDataModeController:
     m_DataMode: 0
