@@ -9,6 +9,11 @@ public class InventoryManager : MonoBehaviour
 
     public int eggCount = 0;
     public int eggsNeededForKey = 3;
+    public int eggsNeededForEnd = 5;
+    public DialogueManager dialogueManager;
+    public DialogueData keyDialogue;
+
+    private bool dialogueTriggered = false;
 
     public GameObject keyObjectToEnable; // Assign this in the Inspector
 
@@ -28,6 +33,8 @@ public class InventoryManager : MonoBehaviour
         if (eggCount == eggsNeededForKey)
         {
             EnableKey();
+            TriggerDialogue();
+            
         }
     }
 
@@ -42,5 +49,10 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.LogError("No key object assigned to enable!");
         }
+    }
+
+    private void TriggerDialogue()
+    {
+        dialogueManager.StartDialogue(keyDialogue);
     }
 }

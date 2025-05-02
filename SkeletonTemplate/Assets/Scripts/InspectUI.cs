@@ -11,6 +11,7 @@ public class InspectUI : MonoBehaviour
     public GameObject panel;
     public TextMeshProUGUI itemNameText;
     public Transform modelAnchor;
+    public Button closeInspect;
 
     private GameObject currentModel;
     private Vector3 rotationInput;
@@ -22,6 +23,7 @@ public class InspectUI : MonoBehaviour
         else Destroy(gameObject);
 
         panel.SetActive(false);
+        closeInspect.enabled = false;
     }
 
     public void InspectItem(string itemName, GameObject modelPrefab)
@@ -44,11 +46,13 @@ public class InspectUI : MonoBehaviour
         }
 
         panel.SetActive(true);
+        closeInspect.enabled = true;
     }
 
     public void CloseInspection()
     {
         panel.SetActive(false);
+        closeInspect.enabled = false;
         if (currentModel != null)
             Destroy(currentModel);
     }

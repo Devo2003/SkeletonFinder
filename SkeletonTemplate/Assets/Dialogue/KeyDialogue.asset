@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: KeyDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Thank You!
-  - Here your ribs
+  - text: That is all my eggies in the north.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Come back to me.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
