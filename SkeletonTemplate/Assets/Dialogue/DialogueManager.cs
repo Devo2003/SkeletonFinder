@@ -85,8 +85,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public GameObject restartButton; // Assign in Inspector
+
     private void EndGame()
     {
-        Application.Quit(); // Closes the game
+        Debug.Log("Showing restart button...");
+        if (restartButton != null)
+        {
+            restartButton.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Restart button not assigned!");
+        }
     }
 }
