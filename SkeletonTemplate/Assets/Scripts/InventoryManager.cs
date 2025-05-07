@@ -13,10 +13,30 @@ public class InventoryManager : MonoBehaviour
     public DialogueManager dialogueManager;
     public DialogueData keyDialogue;
 
-    private bool dialogueTriggered = false;
+
+
+    //private bool dialogueTriggered = false;
 
     public GameObject keyObjectToEnable; // Assign this in the Inspector
 
+    public DialogueData endGameDialogue; // assign in inspector
+
+    private bool endTriggered = false;
+
+    //public bool HasAllEggs()
+    //{
+    //    return eggCount >= eggsNeededForEnd;
+    //}
+
+    private void Update()
+    {
+        if (eggCount >= eggsNeededForEnd && !endTriggered)
+        {
+            // You'd call this after player interacts with the NPC
+            DialogueManager.Instance.StartDialogue(endGameDialogue, true);
+            endTriggered = true;
+        }
+    }
     private void Awake()
     {
         if (Instance == null) Instance = this;
