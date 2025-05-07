@@ -20,6 +20,10 @@ public class BurnSkill : MonoBehaviour
     public Button burnButton;
     public Image cooldownOverlay;
 
+    [Header("Particle Effect")]
+    public ParticleSystem burnParticlesPrefab; //Reference
+    private ParticleSystem burnParticles; //Instantiate
+
     public FMOD.Studio.EventInstance burnPrimeSFX;
     public FMOD.Studio.EventInstance burnLoopSFX;
     public FMOD.Studio.EventInstance burnDeactivateSFX;
@@ -40,6 +44,13 @@ public class BurnSkill : MonoBehaviour
         if (cooldownOverlay != null)
         {
             cooldownOverlay.fillAmount = 0f;
+        }
+
+        if (burnParticlesPrefab != null)
+        {
+            burnParticles = Instantiate(burnParticlesPrefab, transform.position, Quaternion.identity);
+            burnParticles.transform.parent = this.transform; //parent to burned object
+            burnParticles.Stop(); //Instantiates it but ensures its disabled
         }
     }
 
@@ -77,6 +88,11 @@ public class BurnSkill : MonoBehaviour
         if (isBurnActive && canBurn && Input.GetMouseButtonDown(0))
         {
             TryBurnObject();
+            if (burnParticles != null)
+            {
+                Debug.Log("Particles Activated");
+                burnParticles.Play();
+            }
         }
     }
 
@@ -127,6 +143,19 @@ public class BurnSkill : MonoBehaviour
         {
             if (hit.collider.CompareTag("Burnable"))
             {
+                // Position the particle system to the object's center
+                burnParticles.transform.position = hit.collider.bounds.center;
+
+                // Force rotation to always face upward (Y-axis)
+                burnParticles.transform.rotation = Quaternion.Euler(-90, 0, 0);
+
+                // Optional: Clear and restart the particle system to ensure it plays fresh
+                burnParticles.Clear();
+                burnParticles.Play();
+
+                // Unparent the particles so they continue playing after destruction
+                burnParticles.transform.parent = null;
+
                 burnLoopSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 burnLoopSFX.release();
                 burnDeactivateSFX = FMODUnity.RuntimeManager.CreateInstance("event:/Burn Deactivate");
@@ -144,7 +173,6 @@ public class BurnSkill : MonoBehaviour
 
                 Debug.Log("Burn Skill Cooling Down...");
 
-                // Optionally grey out button during cooldown
                 if (burnButton != null)
                     burnButton.interactable = false;
             }
