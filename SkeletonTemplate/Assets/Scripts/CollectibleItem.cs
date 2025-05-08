@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CollectibleType { Key, Egg, Bone }
+public enum CollectibleType { Key, Egg, Bone, Spellbook }
 public class CollectibleItem : MonoBehaviour
 {
 

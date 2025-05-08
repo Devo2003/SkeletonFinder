@@ -7,11 +7,14 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
+
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private Image characterImage; // Add UI Image to show the character's image
+
     private Queue<DialogueLine> dialogueQueue = new Queue<DialogueLine>(); // Queue to store dialogue lines with character info
     private bool isDialogueActive = false;
+    private bool isDialogueEnabled = true;
     public bool isEndingDialogue = false; // Check if it's the last dialogue
 
     private void Awake()
@@ -28,9 +31,18 @@ public class DialogueManager : MonoBehaviour
         characterImage.enabled = false; //disables character sprite at runtime
     }
 
+    public void EnableDialogue(bool enable)
+    {
+        isDialogueEnabled = enable;
+        if (!enable && isDialogueActive)
+        {
+            EndDialogue();
+        }
+    }
+
     public void StartDialogue(DialogueData dialogue, bool isEndGameDialogue = false)
     {
-        if (isDialogueActive) return;
+        if (isDialogueActive || !isDialogueEnabled) return;
 
         isEndingDialogue = isEndGameDialogue;
         isDialogueActive = true;
