@@ -53,8 +53,17 @@ public class InventoryManager : MonoBehaviour
         if (eggCount == eggsNeededForKey)
         {
             EnableKey();
-            TriggerDialogue();
+            KeyDialogue();
             
+        }
+    }
+
+    public void AllEggsCollected()
+    {
+        if (eggCount == eggsNeededForEnd)
+        {
+            EndDialogue();
+
         }
     }
 
@@ -71,8 +80,13 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void TriggerDialogue()
+    private void KeyDialogue()
     {
         dialogueManager.StartDialogue(keyDialogue);
+    }
+
+    private void EndDialogue()
+    {
+        dialogueManager.StartDialogue(endGameDialogue);
     }
 }

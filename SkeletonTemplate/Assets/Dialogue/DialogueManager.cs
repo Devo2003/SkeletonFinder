@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Image characterImage; // Add UI Image to show the character's image
 
     private Queue<DialogueLine> dialogueQueue = new Queue<DialogueLine>(); // Queue to store dialogue lines with character info
-    private bool isDialogueActive = false;
+    public bool isDialogueActive = false;
     private bool isDialogueEnabled = true;
     public bool isEndingDialogue = false; // Check if it's the last dialogue
 
@@ -93,22 +93,9 @@ public class DialogueManager : MonoBehaviour
         if (isEndingDialogue)
         {
             Debug.Log("Ending game...");
-            EndGame();
+            //EndGame();
         }
     }
 
-    public GameObject restartButton; // Assign in Inspector
-
-    private void EndGame()
-    {
-        Debug.Log("Showing restart button...");
-        if (restartButton != null)
-        {
-            restartButton.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("Restart button not assigned!");
-        }
-    }
+  
 }
