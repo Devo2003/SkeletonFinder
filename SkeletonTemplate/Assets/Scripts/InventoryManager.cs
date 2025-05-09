@@ -19,7 +19,9 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject keyObjectToEnable; // Assign this in the Inspector
 
-    public DialogueData endGameDialogue; // assign in inspector
+    public DialogueData crowDialogue; // assign in inspector
+
+    public DialogueData endGameDialogue;
 
     private bool endTriggered = false;
 
@@ -33,7 +35,7 @@ public class InventoryManager : MonoBehaviour
         if (eggCount >= eggsNeededForEnd && !endTriggered)
         {
             // You'd call this after player interacts with the NPC
-            DialogueManager.Instance.StartDialogue(endGameDialogue, true);
+            DialogueManager.Instance.StartDialogue(crowDialogue, true);
             endTriggered = true;
         }
     }
@@ -62,7 +64,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (eggCount == eggsNeededForEnd)
         {
-            EndDialogue();
+            CrowDialogue();
 
         }
     }
@@ -85,8 +87,8 @@ public class InventoryManager : MonoBehaviour
         dialogueManager.StartDialogue(keyDialogue);
     }
 
-    private void EndDialogue()
+    private void CrowDialogue()
     {
-        dialogueManager.StartDialogue(endGameDialogue);
+        dialogueManager.StartDialogue(crowDialogue);
     }
 }

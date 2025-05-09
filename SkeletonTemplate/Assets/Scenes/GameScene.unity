@@ -79534,13 +79534,14 @@ GameObject:
   - component: {fileID: 1392978037}
   - component: {fileID: 1392978039}
   - component: {fileID: 1392978038}
+  - component: {fileID: 1392978040}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FadePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1392978037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -79550,7 +79551,7 @@ RectTransform:
   m_GameObject: {fileID: 1392978036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1355010316}
@@ -79598,6 +79599,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392978036}
   m_CullTransparentMesh: 1
+--- !u!225 &1392978040
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392978036}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1395648901
 GameObject:
   m_ObjectHideFlags: 0
@@ -80542,6 +80555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 50b9f3688922c394ea531bd4410405b8, type: 2}
+  fadePanel: {fileID: 0}
   restartButton: {fileID: 787147929}
 --- !u!65 &1410255305
 BoxCollider:
@@ -93234,6 +93248,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 915635558}
   keyDialogue: {fileID: 11400000, guid: c4e307e43d14cdd4289c6d46124c455c, type: 2}
   keyObjectToEnable: {fileID: 1790216462}
+  crowDialogue: {fileID: 11400000, guid: 22f8ee04dce2eaa48838e6c7359d5d73, type: 2}
   endGameDialogue: {fileID: 11400000, guid: 50b9f3688922c394ea531bd4410405b8, type: 2}
 --- !u!114 &1631870501
 MonoBehaviour:
@@ -104467,7 +104482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1835132471
 Transform:
   m_ObjectHideFlags: 0
@@ -124097,7 +124112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8357331562494907932
 Transform:
   m_ObjectHideFlags: 0

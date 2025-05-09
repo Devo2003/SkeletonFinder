@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndAreaTrigger : DialogueTrigger
 {
     private bool hasTriggered = false;
-
+    [SerializeField] private CanvasGroup fadePanel;
     private void OnTriggerEnter(Collider other)
     {
         if (hasTriggered) return;
