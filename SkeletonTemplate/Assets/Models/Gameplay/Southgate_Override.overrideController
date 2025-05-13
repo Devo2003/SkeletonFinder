@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Southgate_Override
+  m_Controller: {fileID: 9100000, guid: d2725774b4f8759428a8de71c06ad9fe, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: c6e80a4724c617d40b6418e14054a7ef, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: cf8d71c0c9ba7714faaff4057fb8dbb8, type: 2}

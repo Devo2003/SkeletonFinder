@@ -514,9 +514,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "                        Jared Eyler - Lead Designer\n\n                        
-    Devin Salgado - Lead Programmer\n\n                              Nick Roach -
-    Lead Narrative Design\n\n                      Sean Brown - Sound Design"
+  m_text: "                   Jared Eyler - Lead Designer\n\n                        
+    Devin Salgado - Lead Programmer\n\n                            Nick Roach - Lead
+    Narrative Design\n\n                     Sean Brown - Sound Designer\n\n\t\t  
+    Dani Craanen - Sound Designer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf483ba18d4382a41a82dfcacf25dc5a, type: 2}
   m_sharedMaterial: {fileID: -8507278712665370828, guid: cf483ba18d4382a41a82dfcacf25dc5a, type: 2}
