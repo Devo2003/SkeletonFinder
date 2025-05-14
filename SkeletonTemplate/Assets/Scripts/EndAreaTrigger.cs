@@ -64,7 +64,9 @@ public class EndAreaTrigger : DialogueTrigger
 
         fadePanel.alpha = 1;
 
-        // Optional: reload scene or show credits, etc.
+        PlayerController.Instance.EnableMovement(false);
+
+        // Reload scene or show credits, etc.
         Debug.Log("Fade complete. Game Over or Restart?");
     }
 
