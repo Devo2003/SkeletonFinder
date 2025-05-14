@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcedebd536e8544985e0d1339ff6c96, type: 3}
+  m_Name: Egg5_Chase
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: There it is!
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: Hurry Vira, after it!
+    characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}
