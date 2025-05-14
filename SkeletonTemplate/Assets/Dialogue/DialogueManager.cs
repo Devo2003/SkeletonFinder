@@ -31,6 +31,13 @@ public class DialogueManager : MonoBehaviour
         characterImage.enabled = false; //disables character sprite at runtime
     }
 
+    private bool isInputPaused = false;
+
+    public void PauseDialogueInput(bool pause)
+    {
+        isInputPaused = pause;
+    }
+
     public void EnableDialogue(bool enable)
     {
         isDialogueEnabled = enable;
@@ -77,7 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
+        if (isDialogueActive && !isInputPaused && Input.GetKeyDown(KeyCode.Space))
         {
             DisplayNextLine();
         }

@@ -44,7 +44,7 @@ public class InspectUI : MonoBehaviour
 
         //Disable Player Movement and Dialogue
         PlayerController.Instance.EnableMovement(false);
-        DialogueManager.Instance.EnableDialogue(false);
+        DialogueManager.Instance.PauseDialogueInput(true);
 
         itemNameText.text = itemName;
 
@@ -76,7 +76,7 @@ public class InspectUI : MonoBehaviour
 
         //Enable Player Movement and Dialogue
         PlayerController.Instance.EnableMovement(true);
-        DialogueManager.Instance.EnableDialogue(true);
+        DialogueManager.Instance.PauseDialogueInput(false);
     }
 
     private void NormalizeModelScale(GameObject model)
