@@ -99,4 +99,10 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(moveVelocity.x, rb.velocity.y, moveVelocity.z);
     }
+
+    void OnDestroy()
+    {
+        movementSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        movementSFX.release();
+    }
 }
