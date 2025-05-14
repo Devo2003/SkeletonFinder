@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: eggsDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Bring my eggs
-    characterImage: {fileID: 0}
+  - text: That is all of my eggies!
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}
+  - text: Come back to me, tiny ones.
+    characterImage: {fileID: 21300000, guid: 08f77fe421c15d84196f3942d1905cef, type: 3}

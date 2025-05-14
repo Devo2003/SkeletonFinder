@@ -179,6 +179,8 @@ public class BurnSkill : MonoBehaviour
         }
     }
 
+    //Store each object's original material
+    private Dictionary<GameObject, Material> originalMaterials = new Dictionary<GameObject, Material>();
     private void HighlightBurnableObjects(bool highlight)
     {
         GameObject[] burnableObjects = GameObject.FindGameObjectsWithTag("Burnable");
@@ -190,14 +192,27 @@ public class BurnSkill : MonoBehaviour
             {
                 if (highlight)
                 {
-                    defaultMaterial = renderer.material;
+                    //If the object hasn't been stored yet, cache its original material
+                    if (!originalMaterials.ContainsKey(obj))
+                    {
+                        originalMaterials[obj] = renderer.material;
+                    }
                     renderer.material = highlightMaterial;
                 }
                 else
                 {
-                    renderer.material = defaultMaterial;
+                    //If the object exists in the dictionary, restore its original material                 
+                    if (originalMaterials.ContainsKey(obj))
+                    {
+                        renderer.material = originalMaterials[obj];
+                    }
                 }
             }
+        }
+        //If highlight is disabled, clear the dictionary
+        if (!highlight)
+        {
+            originalMaterials.Clear();
         }
     }
 }
