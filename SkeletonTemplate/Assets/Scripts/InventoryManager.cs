@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 //using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
@@ -12,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public int eggsNeededForEnd = 5;
     public DialogueManager dialogueManager;
     public DialogueData keyDialogue;
+    public TextMeshProUGUI eggCounterText;
 
 
 
@@ -51,14 +54,25 @@ public class InventoryManager : MonoBehaviour
     {
         eggCount++;
         Debug.Log("Egg Count: " + eggCount);
+        UpdateEggCounter();
 
         if (eggCount == eggsNeededForKey)
         {
             EnableKey();
             KeyDialogue();
-            
         }
     }
+
+    private void UpdateEggCounter()
+    {
+        if (eggCounterText != null)
+        {
+            eggCounterText.text = "Eggs: " + eggCount.ToString();
+        }
+
+    }
+
+    
 
     public void AllEggsCollected()
     {
