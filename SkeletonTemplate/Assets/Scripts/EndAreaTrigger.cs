@@ -23,7 +23,7 @@ public class EndAreaTrigger : DialogueTrigger
 
                 // Optional: Start a fade out after the dialogue finishes
                 StartCoroutine(WaitForDialogueThenFade());
-                EndGame();
+                //EndGame();
             }
         }
     }
@@ -39,6 +39,7 @@ public class EndAreaTrigger : DialogueTrigger
         // Then start your fade out
         yield return new WaitForSeconds(1f); // Optional delay
         StartCoroutine(FadeOut());
+        EndGame();
     }
 
     private IEnumerator FadeOut()

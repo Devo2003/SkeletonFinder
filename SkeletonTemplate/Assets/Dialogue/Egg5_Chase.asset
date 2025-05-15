@@ -15,5 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - text: There it is!
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
+  - text: Looks like we've got a runny egg!
+    characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
   - text: Hurry Vira, after it!
     characterImage: {fileID: 21300000, guid: a17f5169702a9fe4baef60abc31b7fd0, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TrevorIntro
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: Darling! Thank goodness you're in one...
+  - text: Darling! Thank goodness you're in one piec...
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}
   - text: Thank goodness you're safe.
     characterImage: {fileID: 21300000, guid: e54f8dc4871658b408bf9520b7cbcdaf, type: 3}

@@ -11,7 +11,7 @@ public class TelekinesisController : MonoBehaviour
     public Button telekinesisButton; // UI Button to prime telekinesis
     public Image telekinesisBox;
     public Outline buttonOutline; // Outline component for glow effect
-    public Image uiBook;
+    public Image uiBook_TK;
 
     private TelekinesisObject selectedObject;
     private bool hasSelectedObject = false;
@@ -39,7 +39,7 @@ public class TelekinesisController : MonoBehaviour
             telekinesisButton.onClick.AddListener(ToggleTelekinesis); // Assign button listener
             buttonOutline = telekinesisButton.GetComponent<Outline>(); // Get Outline component
             telekinesisButton.interactable = false; // Disable until unlocked
-            uiBook.enabled = false;
+            uiBook_TK.enabled = false;
         }
     }
 
@@ -205,7 +205,7 @@ public class TelekinesisController : MonoBehaviour
         {
             telekinesisButton.interactable = true;
             telekinesisBox.enabled = true;
-            uiBook.enabled = true;
+            uiBook_TK.enabled = true;
         }
     }
 }

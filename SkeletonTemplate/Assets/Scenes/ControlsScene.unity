@@ -693,7 +693,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Left Mouse Click - Prime Magic & Select Objects
+  m_text: 'Left Mouse Click - Prime Magic & Select Objects
+
+    T - Telekinesis
+
+    B
+    - Burn'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf483ba18d4382a41a82dfcacf25dc5a, type: 2}
   m_sharedMaterial: {fileID: -8507278712665370828, guid: cf483ba18d4382a41a82dfcacf25dc5a, type: 2}
